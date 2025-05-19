@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Public School | Home</title>
+    <meta name="author" content="Trivlogic">
+    <meta name="description" content="Divine Public School">
+    <meta name="keywords" content="Divine Public School">
+    <!-- Favicons - Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" href="/img/devin.png" type="image/x-icon">
+    <link rel="icon" href="/img/devin.png" type="image/x-icon">
+
+    <!--==============================
+	  Google Fonts
+	============================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Jost:wght@400;500&amp;display=swap"
+        rel="stylesheet">
+
+
+    <!--==============================
+	    All CSS File
+	============================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/css/app.min.css"> -->
+    <!-- Fontawesome Icon -->
+    <link rel="stylesheet" href="/css/fontawesome.min.css">
+    <!-- Layerslider -->
+    <link rel="stylesheet" href="/css/layerslider.min.css">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="/css/magnific-popup.min.css">
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="/css/slick.min.css">
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .alumni-container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            margin-top: 15rem;
+        }
+        
+        .alumni-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .alumni-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .alumni-header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-orange));
+            border-radius: 2px;
+        }
+        
+        .alumni-header p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        /* Alumni Card Styles */
+        .alumni-card {
+            background: var(--primary-white);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            display: flex;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .alumni-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        /* Alternate card direction */
+        .alumni-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .alumni-image-container {
+            flex: 0 0 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .alumni-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .alumni-card:hover .alumni-image {
+            transform: scale(1.05);
+        }
+        
+        .alumni-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(41, 128, 185, 0.7) 0%, rgba(243, 156, 18, 0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .alumni-card:hover .alumni-image-overlay {
+            opacity: 0.2;
+        }
+        
+        .alumni-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .alumni-name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .alumni-name::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-orange));
+            border-radius: 3px;
+        }
+        
+        .alumni-designation {
+            color: var(--primary-orange);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .alumni-designation i {
+            margin-right: 0.5rem;
+        }
+        
+        .alumni-quote {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .alumni-quote::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 4rem;
+            color: rgba(41, 128, 185, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .alumni-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .alumni-batch {
+            display: flex;
+            align-items: center;
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+        
+        .alumni-batch i {
+            margin-right: 0.5rem;
+            color: var(--primary-orange);
+        }
+        
+        .alumni-social {
+            display: flex;
+            gap: 0.8rem;
+        }
+        
+        .alumni-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-blue);
+            color: var(--primary-white);
+            transition: all 0.3s;
+        }
+        
+        .alumni-social a:hover {
+            background: var(--primary-orange);
+            transform: translateY(-3px);
+        }
+        
+        /* Rounded Image Variant */
+        .alumni-card.rounded .alumni-image-container {
+            flex: 0 0 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-orange));
+            padding: 15px;
+        }
+        
+        .alumni-card.rounded .alumni-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .alumni-card {
+                flex-direction: column !important;
+            }
+            
+            .alumni-image-container {
+                flex: 0 0 250px;
+            }
+            
+            .alumni-card.rounded .alumni-image-container {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .alumni-header h1 {
+                font-size: 2rem;
+            }
+            
+            .alumni-name {
+                font-size: 1.4rem;
+            }
+            
+            .alumni-card.rounded .alumni-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+        /* Alumni Form Modal Styles */
+        .alum-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .alum-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .alum-form-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2.5rem;
+            background-color:var(--body-bg) ;
+            border-radius: 15px;
+            box-shadow: var(--form-shadow);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .alum-modal-overlay.active .alum-form-container {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .alum-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-orange));
+        }
+        
+        .alum-form-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            border: none;
+            color: var(--vs-secondary-color);
+            font-size: 16px;
+            z-index: 10;
+        }
+        
+        .alum-form-close:hover {
+            background: #f1f1f1;
+            transform: rotate(90deg);
+        }
+
+        .alum-form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .alum-form-header h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .alum-form-header h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-orange));
+            border-radius: 1.5px;
+        }
+
+        .alum-form-header p {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .alum-form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .alum-form-group {
+            position: relative;
+        }
+
+        .alum-form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .alum-form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .alum-form-input,
+        .alum-form-textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: var(--input-bg);
+        }
+
+        .alum-form-input:focus,
+        .alum-form-textarea:focus {
+            outline: none;
+            border-color: var(--input-focus);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .alum-form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .alum-form-file-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border: 2px dashed var(--input-border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .alum-form-file-wrapper:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .alum-form-file-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .alum-form-file-label {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+
+        .alum-form-file-sublabel {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .alum-form-file {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .alum-form-submit {
+            grid-column: span 2;
+            background: var(--button-gradient);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
+        }
+
+        .alum-form-submit:hover {
+            background: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .alum-form-icon {
+            position: absolute;
+            top: 40px;
+            left: 12px;
+            color: var(--text-light);
+        }
+
+        .alum-form-input-icon {
+            padding-left: 2.5rem;
+            margin-top: -9px;
+        }
+     
+        /* Register Button Styles */
+        .alum-register-btn {
+            background: var(--button-gradient);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 auto 2rem;
+        }
+
+        .alum-register-btn:hover {
+            background: var(--button-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .alum-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .alum-form-group.full-width {
+                grid-column: span 1;
+            }
+            
+            .alum-form-submit {
+                grid-column: span 1;
+            }
+            
+            .alum-form-container {
+                padding: 1.5rem;
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preloader  ">
+        <div class="preloader-inner">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <header class="vs-header header-layout2 p-3">
+        <div class="header-top">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col col-sm-auto">
+                        <div class="header-logo">
+                            <a href="/">
+                                <img src="/img/devin.png" alt="logo" style="width: 100px; object-fit: contain;">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-auto d-none d-lg-block">
+                        <div class="header-links style3 style-white">
+                            <ul>
+                                <li class="d-none d-xl-inline-block"><i class="fas fa-envelope"></i>Email: <a
+                                        href="mailto:admin@divinepublicschool.com">admin@divinepublicschool.com</a></li>
+                                <li><i class="fas fa-mobile-alt"></i>Phone: <a href="tel:0474 2416181">0474 2416181</a>
+                                    | <a href="tel:+919746105543">+91 9746105543</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row align-items-center justify-content-end gx-3">
+                            <div class="col-auto d-none d-lg-block">
+                                <div class="header-icons">
+                                    <button class="simple-icon style2 sideMenuToggler"><i
+                                            class="far fa-bars"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-auto ">
+                                <a href="/contact" class="vs-btn ">Apply Today</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container will-sticky sticky-active">
+            <div class="menu-area ">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col text-center">
+                        <nav class="main-menu menu-style2 d-none d-lg-block">
+                            <ul>
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/about">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="/events">Events</a>
+                                </li>
+                                <li>
+                                    <a href="/academics">Academics</a>
+                                </li>
+                                <li>
+                                    <a href="/gallery">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="/alumini">Alumni</a>
+                                </li>
+                                <li>
+                                    <a href="/contact">Contact</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="alumni-container">
+        <button class="alum-register-btn" id="openFormModal">
+            <i class="fas fa-user-plus"></i>
+            Drop Your Thoughts
+        </button>
+        <!-- modal -->
+
+        <div class="alum-modal-overlay" id="formModal">
+            <div class="alum-form-container">
+                <button class="alum-form-close" id="closeFormModal">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <div class="alum-form-header">
+                    <h2>Join Our Alumni Network</h2>
+                    <p>Share your journey and stay connected with fellow graduates</p>
+                </div>
+
+                <form class="alum-form">
+                    <div class="alum-form-group">
+                        <label for="alum-name" class="alum-form-label">Full Name</label>
+                        <div class="alum-form-input-wrapper">
+                            <i class="fas fa-user alum-form-icon"></i>
+                            <input type="text" id="alum-name" class="alum-form-input alum-form-input-icon"
+                                placeholder="Your full name" required>
+                        </div>
+                    </div>
+
+                    <div class="alum-form-group">
+                        <label for="alum-email" class="alum-form-label">Email Address</label>
+                        <div class="alum-form-input-wrapper">
+                            <i class="fas fa-envelope alum-form-icon"></i>
+                            <input type="email" id="alum-email" class="alum-form-input alum-form-input-icon"
+                                placeholder="Your email address" required>
+                        </div>
+                    </div>
+
+                    <div class="alum-form-group">
+                        <label for="alum-phone" class="alum-form-label">Phone Number</label>
+                        <div class="alum-form-input-wrapper">
+                            <i class="fas fa-phone-alt alum-form-icon"></i>
+                            <input type="tel" id="alum-phone" class="alum-form-input alum-form-input-icon"
+                                placeholder="Your phone number">
+                        </div>
+                    </div>
+
+                    <div class="alum-form-group">
+                        <label for="alum-graduation-date" class="alum-form-label">Graduation Date</label>
+                        <div class="alum-form-input-wrapper">
+                            <span class="mt-3"> <i class="fas fa-calendar-alt alum-form-icon"></i></span>
+                            <input type="date" id="alum-graduation-date" class="alum-form-input alum-form-input-icon"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="alum-form-group full-width">
+                        <label for="alum-thoughts" class="alum-form-label">Your Thoughts</label>
+                        <textarea id="alum-thoughts" class="alum-form-textarea"
+                            placeholder="Share your experience and achievements after graduation"></textarea>
+                    </div>
+
+                    <div class="alum-form-group full-width">
+                        <label class="alum-form-label">Profile Picture</label>
+                        <div class="alum-form-file-wrapper">
+                            <i class="fas fa-camera alum-form-file-icon"></i>
+                            <span class="alum-form-file-label">Upload Your Photo</span>
+                            <span class="alum-form-file-sublabel">JPG, PNG or GIF (Max. 2MB)</span>
+                            <input type="file" class="alum-form-file" accept="image/*">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="alum-form-submit gap-3">Submit Your Thoughts</button>
+                </form>
+            </div>
+        </div>
+        <div class="alumni-header">
+            <h1>Our Distinguished Alumni</h1>
+            <p>Meet our accomplished graduates who are making a difference across various industries worldwide.</p>
+        </div>
+
+        <div class="alumni-cards">
+
+            <div class="alumni-card rounded">
+                <div class="alumni-image-container">
+                    <img src="/img/about/abt-1.jpg" alt="Sarah Johnson" class="alumni-image">
+                    <div class="alumni-image-overlay"></div>
+                </div>
+                <div class="alumni-content">
+                    <h3 class="alumni-name">Sarah </h3>
+                    <p class="alumni-designation"><i class="fas fa-briefcase"></i> NEET</p>
+                    <p class="alumni-quote">The education I received gave me both the technical skills and leadership
+                        qualities needed to thrive in the tech industry. The alumni network has been invaluable
+                        throughout my career.</p>
+                    <div class="alumni-footer">
+                        <span class="alumni-batch"><i class="fas fa-graduation-cap"></i> Class of 2020</span>
+
+
+                        <span class="alumni-date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="alumni-card rounded">
+                <div class="alumni-image-container">
+                    <img src="/img/about/abt-1.jpg" alt="Sarah Johnson" class="alumni-image">
+                    <div class="alumni-image-overlay"></div>
+                </div>
+                <div class="alumni-content">
+                    <h3 class="alumni-name">Sarah Johnson</h3>
+                    <p class="alumni-designation"><i class="fas fa-briefcase"></i> Senior Product Manager at
+                        TechSolutions</p>
+                    <p class="alumni-quote">The education I received gave me both the technical skills and leadership
+                        qualities needed to thrive in the tech industry. The alumni network has been invaluable
+                        throughout my career.</p>
+                    <div class="alumni-footer">
+                        <span class="alumni-batch"><i class="fas fa-graduation-cap"></i> Class of 2020</span>
+
+
+                        <span class="alumni-date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="alumni-card rounded">
+                <div class="alumni-image-container">
+                    <img src="/img/about/abt-1.jpg" alt="Sarah Johnson" class="alumni-image">
+                    <div class="alumni-image-overlay"></div>
+                </div>
+                <div class="alumni-content">
+                    <h3 class="alumni-name">Sarah </h3>
+                    <p class="alumni-designation"><i class="fas fa-briefcase"></i> KEAM</p>
+                    <p class="alumni-quote">The education I received gave me both the technical skills and leadership
+                        qualities needed to thrive in the tech industry. The alumni network has been invaluable
+                        throughout my career.</p>
+                    <div class="alumni-footer">
+                        <span class="alumni-batch"><i class="fas fa-graduation-cap"></i> Class of 2020</span>
+
+
+                        <span class="alumni-date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <footer class="footer-wrapper footer-layout1" data-bg-src="/img/bg/footer-bg-1-1.png">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gx-60 gy-4 text-center text-lg-start justify-content-between align-items-center">
+                    <div class="col-lg"><a href="/"><img style="height: 120px!important; width: 120px!important;"
+                                src="/img/devin.png" alt="logo"></a></div>
+                    <div class="col-lg-auto">
+                        <h3 class="h4 mb-0 text-white"><img src="/img/icon/check-list.svg" alt="icon" class="me-2">
+                            Enrol your child in a Session now!</h3>
+                    </div>
+                    <div class="col-lg-auto"><a href="/contact" class="vs-btn">Start Registration</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="widget-area">
+            <div class="container">
+                <div class="row justify-content-center gx-60">
+                    <div class="col-lg-4">
+                        <div class="widget footer-widget">
+                            <div class="widget-about">
+                                <h3 class="mt-n2">Giving your child the best start in life</h3>
+                                <p class="map-link"><img src="/img/icon/map.svg" alt="svg">Divine Public School & Junior
+                                    College, Puthoor, Kottarakara Puthoor, Kollam, Kerala 691507</p>
+                                <div class="sidebar-gallery">
+                                    <div class="gallery-thumb">
+                                        <img src="/img/widget/gal-2-1.jpg" alt="Gallery Image" class="w-100">
+                                        <a href="/img/widget/gal-2-1.jpg" class="popup-image gal-btn"><i
+                                                class="fal fa-plus"></i></a>
+                                    </div>
+                                    <div class="gallery-thumb">
+                                        <img src="/img/widget/gal-2-2.jpg" alt="Gallery Image" class="w-100">
+                                        <a href="/img/widget/gal-2-2.jpg" class="popup-image gal-btn"><i
+                                                class="fal fa-plus"></i></a>
+                                    </div>
+                                    <div class="gallery-thumb">
+                                        <img src="/img/widget/gal-2-3.jpg" alt="Gallery Image" class="w-100">
+                                        <a href="/img/widget/gal-2-3.jpg" class="popup-image gal-btn"><i
+                                                class="fal fa-plus"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="widget footer-widget">
+                            <h3 class="widget_title">Get In Touch</h3>
+                            <div>
+                                <p class="footer-text">Monday to Friday: <span class="time">8.30am – 06.30pm</span></p>
+                                <p class="footer-text">Saturday, Sunday: <span class="time">Close</span></p>
+                                <p class="footer-info"><i class="fal fa-envelope"></i>Email: <a
+                                        href="mailto:admin@divinepublicschool.com">admin@divinepublicschool.com</a></p>
+                                <p class="footer-info"><i class="fas fa-mobile-alt"></i>Phone: <a
+                                        href="tel:+04742416181">0474 2416181</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="widget widget_nav_menu  footer-widget">
+                            <h3 class="widget_title">Quick Links</h3>
+                            <div class="menu-all-pages-container footer-menu">
+                                <ul class="menu">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/events">Events</a></li>
+                                    <li><a href="/academics"> Academics</a></li>
+                                    <li><a href="/gallery">Gallery</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div s class="row flex-row-reverse gy-3 justify-content-between align-items-center">
+                    <div class="col-lg-auto">
+                        <div class="footer-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-auto">
+                        <p class="copyright-text text-white">Copyright &copy; 2025 <a href="/">Divine Public School</a>.
+                            All
+                            Rights Reserved By <a href="">Trivlogic Private Limited</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <nav class="mobile-nav">
+        <a href="/" class="nav-item ">
+            <div class="nav-icon">
+                <i class="fas fa-home"></i>
+            </div>
+            <span>Home</span>
+        </a>
+        <a href="/about" class="nav-item">
+            <div class="nav-icon">
+                <i class="fas fa-info-circle"></i>
+            </div>
+            <span>About Us</span>
+        </a>
+        <a href="/events" class="nav-item">
+            <div class="nav-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <span>Events</span>
+        </a>
+        <a href="/academics" class="nav-item">
+            <div class="nav-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span>Academics</span>
+        </a>
+        <a href="/gallery" class="nav-item">
+            <div class="nav-icon">
+                <i class="fas fa-images"></i>
+            </div>
+            <span>Gallery</span>
+        </a>
+        <a href="/alumini" class="nav-item active">
+            <div class="nav-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <span>Alumni</span>
+        </a>
+        <a href="/contact" class="nav-item">
+            <div class="nav-icon">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const openFormBtn = document.getElementById('openFormModal');
+            const closeFormBtn = document.getElementById('closeFormModal');
+            const formModal = document.getElementById('formModal');
+            const formContainer = document.querySelector('.alum-form-container');
+
+            // Open modal
+            openFormBtn.addEventListener('click', function () {
+                formModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+
+            // Close modal when clicking the close button
+            closeFormBtn.addEventListener('click', function () {
+                formModal.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+
+            // Close modal when clicking outside the form
+            formModal.addEventListener('click', function (e) {
+                if (e.target === formModal) {
+                    formModal.classList.remove('active');
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+
+            // Prevent form container clicks from closing the modal
+            formContainer.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && formModal.classList.contains('active')) {
+                    formModal.classList.remove('active');
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+
+            // Form submission handling (prevent default for demo)
+            const alumForm = document.querySelector('.alum-form');
+            alumForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                // Form processing would go here
+                alert('Thank you for your submission! We will be in touch soon.');
+                formModal.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+        });
+    </script>
+    <!-- Jquery -->
+    <script src="/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="/js/slick.min.js"></script>
+    <!-- <script src="/js/app.min.js"></script> -->
+    <!-- Layerslider -->
+    <script src="/js/layerslider.utils.js"></script>
+    <script src="/js/layerslider.transitions.js"></script>
+    <script src="/js/layerslider.kreaturamedia.jquery.js"></script>
+    <!-- jquery ui -->
+    <script src="/js/jquery-ui.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <!-- Isotope Filter -->
+    <script src="/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <!-- Main Js File -->
+    <script src="/js/datecounter.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
