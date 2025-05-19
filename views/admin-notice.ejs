@@ -26,7 +26,208 @@
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="/img/devin.png">
     <link rel="apple-touch-icon-precomposed" href="/img/devin.png">
-
+    <style>
+        .st-data-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        .st-data-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .st-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .st-card-icon img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 4px;
+        }
+        .st-card-title h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+        }
+        .st-card-subtitle span {
+            font-size: 14px;
+            color: #666;
+        }
+        .st-data-item {
+            margin-bottom: 8px;
+        }
+        .st-data-label {
+            font-weight: 500;
+            color: #555;
+        }
+        .st-data-value {
+            color: #333;
+        }
+        .st-description {
+            margin-top: 10px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .st-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        .st-status {
+            display: flex;
+            align-items: center;
+        }
+        .st-status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            margin-right: 5px;
+        }
+        .st-status-inactive .st-status-dot {
+            background-color: #f44336;
+        }
+        .st-status-text {
+            font-size: 14px;
+        }
+        .st-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .st-action-btn {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+        .st-action-btn:hover {
+            background: #f0f0f0;
+        }
+        .st-edit {
+            color: #2196F3;
+        }
+        .st-delete {
+            color: #f44336;
+        }
+        .st-toggle {
+            color: #4CAF50;
+        }
+        .st-toggle.inactive {
+            color: #f44336;
+        }
+        .no-notices {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+    </style>
+     <style>
+        /* Modal styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-content {
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        position: relative;
+    }
+    
+    .modal-header {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 15px;
+    }
+    
+    .modal-body {
+        padding: 15px 0;
+    }
+    
+    .modal-footer {
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #aaa;
+        cursor: pointer;
+    }
+    
+    .close:hover {
+        color: #333;
+    }
+    
+    /* Form styles */
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group input[type="file"],
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+    
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    </style>
 </head>
 
 <body class="body">
@@ -147,189 +348,13 @@
                                 <div class="button-show-hide">
                                     <i class="icon-chevron-left"></i>
                                 </div>
-                                <form class="form-search flex-grow">
-                                    <fieldset class="name">
-                                        <input type="text" placeholder="Search" class="show-search" name="name" tabindex="2" value="" aria-required="true" required="">
-                                    </fieldset>
-                                    <div class="button-submit">
-                                        <button class="" type="submit"><i class="icon-search"></i></button>
-                                    </div>
-                                    <div class="box-content-search" id="box-content-search">
-                                        <ul class="mb-24">
-                                            <li class="mb-14">
-                                                <div class="body-title">Categories</div>
-                                            </li>
-                                            <li class="mb-14">
-                                                <div class="divider"></div>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="img/homepage/cat-img1.jpg" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="category-list.html" class="body-text">Clothing</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mb-10">
-                                                        <div class="divider"></div>
-                                                    </li>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="img/homepage/cat-img1.jpg" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="category-list.html" class="body-text">Accessories</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mb-10">
-                                                        <div class="divider"></div>
-                                                    </li>
-                                                    <li class="product-item gap14">
-                                                        <div class="image no-bg">
-                                                            <img src="img/homepage/cat-img1.jpg" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="category-list.html" class="body-text">Footwear</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <ul class="">
-                                            <li class="mb-14">
-                                                <div class="body-title">Orders</div>
-                                            </li>
-                                            <li class="mb-14">
-                                                <div class="divider"></div>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="img/homepage/cat-img1.jpg" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="order-list.html" class="body-text">Order #12345</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mb-10">
-                                                        <div class="divider"></div>
-                                                    </li>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="img/homepage/cat-img1.jpg" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="order-list.html" class="body-text">Order #12346</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mb-10">
-                                                        <div class="divider"></div>
-                                                    </li>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="img/homepage/cat-img1.jpg" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="order-list.html" class="body-text">Order #12347</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </form>
+                             
                             </div>
                             <div class="header-grid">
                                 <div class="header-item button-dark-light">
                                     <i class="icon-moon"></i>
                                 </div>
-                                <div class="popup-wrap noti type-header">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span class="header-item">
-                                                <span class="text-tiny">1</span>
-                                                <i class="icon-bell"></i>
-                                            </span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton1" >
-                                            <li>
-                                                <h6>Notifications</h6>
-                                            </li>
-                                            <li>
-                                                <div class="noti-item w-full wg-user active">
-                                                    <div class="image">
-                                                        <img src="img/homepage/cat-img1.jpg" alt="">
-                                                    </div>
-                                                    <div class="flex-grow">
-                                                        <div class="flex items-center justify-between">
-                                                            <a href="#" class="body-title">Cameron Williamson</a>
-                                                            <div class="time">10:13 PM</div>
-                                                        </div>
-                                                        <div class="text-tiny">Hello?</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="noti-item w-full wg-user active">
-                                                    <div class="image">
-                                                        <img src="img/homepage/cat-img1.jpg" alt="">
-                                                    </div>
-                                                    <div class="flex-grow">
-                                                        <div class="flex items-center justify-between">
-                                                            <a href="#" class="body-title">Ralph Edwards</a>
-                                                            <div class="time">10:13 PM</div>
-                                                        </div>
-                                                        <div class="text-tiny">Are you there?  interested i this...</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="noti-item w-full wg-user active">
-                                                    <div class="image">
-                                                        <img src="img/homepage/cat-img1.jpg" alt="">
-                                                    </div>
-                                                    <div class="flex-grow">
-                                                        <div class="flex items-center justify-between">
-                                                            <a href="#" class="body-title">Eleanor Pena</a>
-                                                            <div class="time">10:13 PM</div>
-                                                        </div>
-                                                        <div class="text-tiny">Interested in this loads?</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="noti-item w-full wg-user active">
-                                                    <div class="image">
-                                                        <img src="img/homepage/cat-img1.jpg" alt="">
-                                                    </div>
-                                                    <div class="flex-grow">
-                                                        <div class="flex items-center justify-between">
-                                                            <a href="#" class="body-title">Jane Cooper</a>
-                                                            <div class="time">10:13 PM</div>
-                                                        </div>
-                                                        <div class="text-tiny">Okay...Do we have a deal?</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li><a href="#" class="tf-button w-full">View all</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                              
                             
                                 <div class="header-item button-zoom-maximize">
                                     <div class="">
@@ -376,9 +401,7 @@
                     <!-- /header-dashboard -->
                     <!-- main-content -->
                     <div class="main-content">
-                        <!-- main-content-wrap -->
                         <div class="main-content-inner">
-                            <!-- main-content-wrap -->
                             <div class="main-content-wrap">
                                 <div class="flex items-center flex-wrap justify-between gap20 mb-30">
                                     <h3>Notice Management</h3>
@@ -389,238 +412,352 @@
                                         <li>
                                             <i class="icon-chevron-right"></i>
                                         </li>
-                                 
-                                 
                                         <li>
                                             <div class="text-tiny">Notice Management</div>
                                         </li>
                                     </ul>
                                 </div>
-                                <!-- product-list -->
+                                
                                 <div class="wg-box">
                                     <div class="title-box">
                                         <i class="icon-coffee"></i>
-                                        <div class="body-text">Tip search by Product ID: Each product is provided with a unique ID, which you can rely on to find the exact product you need.</div>
+                                        <div class="body-text">Search for notices by title or description.</div>
                                     </div>
+                                    
                                     <div class="flex items-center justify-between gap10 flex-wrap">
                                         <div class="wg-filter flex-grow">
                                             <div class="show">
                                                 <div class="text-tiny">Showing</div>
                                                 <div class="select">
-                                                    <select class="">
-                                                        <option>10</option>
-                                                        <option>20</option>
-                                                        <option>30</option>
+                                                    <select id="entriesPerPage" onchange="updatePagination()">
+                                                        <option value="10">10</option>
+                                                        <option value="20">20</option>
+                                                        <option value="30">30</option>
                                                     </select>
                                                 </div>
                                                 <div class="text-tiny">entries</div>
                                             </div>
-                                            <form class="form-search">
+                                            <form class="form-search" action="/admin/admin-notices" method="GET">
                                                 <fieldset class="name">
-                                                    <input type="text" placeholder="Search here..." class="" name="name" tabindex="2" value="" aria-required="true" required="">
+                                                    <input type="text" placeholder="Search here..." class=""
+                                                        name="search" tabindex="2" value="<%= searchTerm %>"
+                                                        aria-required="true">
                                                 </fieldset>
                                                 <div class="button-submit">
                                                     <button class="" type="submit"><i class="icon-search"></i></button>
                                                 </div>
                                             </form>
                                         </div>
-                                        <a  class="tf-button style-1 w208 " href="javascript:void(0);" onclick="openModal()"><i class="icon-plus"></i>Add new</a>
+                                        <button class="tf-button style-1 w208" onclick="openModal()">
+                                            <i class="icon-plus"></i>Add New
+                                        </button>
                                     </div>
-           <div class="pm-modal-overlay" id="modalOverlay">
-            <div class="pm-modal">
-                <div class="pm-modal-header">
-                    <h3 class="pm-modal-title">Add New Course</h3>
-                    <button class="pm-close-btn" onclick="closeModal()">&times;</button>
-                </div>
-                <div class="pm-modal-body">
-                    <form class="pm-form" id="courseForm">
-                        <div class="pm-form-group">
-                            <label class="pm-form-label" for="Title">Notice Title</label>
-                            <input type="text" class="pm-form-control" id="Title" placeholder="Enter Notice title">
-                        </div>
-                        
-                        <div class="pm-row">
-                            <div class="pm-col">
-                                <div class="pm-form-group">
-                                    <label class="pm-form-label" for="availableSeats"> Date</label>
-                                    <input type="date" class="pm-form-control" id="Date" placeholder="Enter Date">
+                
+                                    <div class="st-container">
+                                        <div class="st-data-grid">
+                                            <% if (notices && notices.length > 0) { %>
+                                                <% notices.forEach(notice => { %>
+                                                    <div class="st-data-card" id="notice-<%= notice._id %>">
+                                                        <div class="st-card-header">
+                                                            <% if (notice.posterUrl) { %>
+                                                                <div class="st-card-icon">
+                                                                    <img src="<%= notice.posterUrl %>" alt="<%= notice.title %>">
+                                                                </div>
+                                                            <% } %>
+                                                            <div class="st-card-title">
+                                                                <h3><%= notice.title %></h3>
+                                                                <div class="st-card-subtitle">
+                                                                    <span><%= new Date(notice.date).toLocaleDateString() %></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="st-card-body">
+                                                            <div class="st-description">
+                                                                <%= notice.description %>
+                                                            </div>
+                                                        </div>
+                                                        <div class="st-card-footer">
+                                                            <div class="st-status <%= notice.isActive ? '' : 'st-status-inactive' %>">
+                                                                <div class="st-status-dot"></div>
+                                                                <div class="st-status-text"><%= notice.isActive ? 'Active' : 'Inactive' %></div>
+                                                            </div>
+                                                            <div class="st-actions">
+                                                                <button class="st-action-btn st-edit" title="Edit" onclick="editNotice('<%= notice._id %>')">✏️</button>
+                                                                <button class="st-action-btn st-delete" title="Delete" onclick="confirmDelete('<%= notice._id %>')">🗑️</button>
+                                                                <button class="st-action-btn st-toggle <%= notice.isActive ? '' : 'inactive' %>" 
+                                                                    title="Toggle Status" onclick="toggleStatus('<%= notice._id %>', <%= notice.isActive %>)">✓</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <% }); %>
+                                            <% } else { %>
+                                                <div class="no-notices">
+                                                    <p>No notices found <%= searchTerm ? `for "${searchTerm}" ` : '' %></p>
+                                                </div>
+                                            <% } %>
+                                        </div>
+                
+                                        <!-- Pagination -->
+                                        <div class="st-pagination">
+                                            <div class="st-page-info">
+                                                Showing 1-<%= notices.length %> of <%= notices.length %> notices
+                                            </div>
+                                            <div class="st-page-numbers">
+                                                <button class="st-page-btn">←</button>
+                                                <button class="st-page-btn st-active">1</button>
+                                                <button class="st-page-btn">→</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="pm-col">
-                                <div class="pm-form-group">
-                                    <label class="pm-form-label" for="requiredAge">posted</label>
-                                    <input type="text" class="pm-form-control" id="requiredAge" placeholder="Enter minimum age">
-                                </div>
-                            </div>
                         </div>
                         
-                        <div class="pm-form-group">
-                            <label class="pm-form-label" for="description">description</label>
-                           <input type="text" class="pm-form-control" id="description" placeholder="Enter description">
-                        </div>
-                        
-                     
-                    </form>
-                </div>
-                <div class="pm-modal-footer">
-                    <button class="pm-btn pm-btn-secondary" onclick="closeModal()">Cancel</button>
-                    <button style="color: white!important; background-color: rgb(79, 79, 227);" class="pm-btn" onclick="saveForm()">Save Course</button>
-                </div>
-            </div>
-        </div>
-                         <div class="st-data-grid">
-            <!-- Course Card 1 -->
-            <div class="st-data-card">
-                <div class="st-card-header">
-                   
-                    <div class="st-card-title">
-                        <h3>Notice title</h3>
-                        <div class="st-card-subtitle">
-                            <span>2023-2025</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="st-card-body">
-                    <div class="st-data-item">
-                        <div class="st-data-label">Posted</div>
-                        <div class="st-data-value">24</div>
-                    </div>
-                
-                  
-                    <div class="st-description">
-                        A comprehensive course covering advanced algebra, calculus, and statistics. Perfect for students preparing for college entrance exams or higher education in STEM fields.
-                    </div>
-                </div>
-                <div class="st-card-footer">
-                    <div class="st-status">
-                        <div class="st-status-dot"></div>
-                        <div class="st-status-text">Active</div>
-                    </div>
-                    <div class="st-actions">
-                        <button class="st-action-btn st-edit" title="Edit">✏</button>
-                        <button class="st-action-btn st-delete" title="Delete">🗑</button>
-                        <button class="st-action-btn st-toggle" title="Toggle Status">✓</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Card 2 -->
-                 <div class="st-data-card">
-                <div class="st-card-header">
-                   
-                    <div class="st-card-title">
-                        <h3>Notice title</h3>
-                        <div class="st-card-subtitle">
-                            <span>2023-2025</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="st-card-body">
-                    <div class="st-data-item">
-                        <div class="st-data-label">Posted</div>
-                        <div class="st-data-value">24</div>
-                    </div>
-                
-                  
-                    <div class="st-description">
-                        A comprehensive course covering advanced algebra, calculus, and statistics. Perfect for students preparing for college entrance exams or higher education in STEM fields.
-                    </div>
-                </div>
-                <div class="st-card-footer">
-                    <div class="st-status">
-                        <div class="st-status-dot"></div>
-                        <div class="st-status-text">Active</div>
-                    </div>
-                    <div class="st-actions">
-                        <button class="st-action-btn st-edit" title="Edit">✏</button>
-                        <button class="st-action-btn st-delete" title="Delete">🗑</button>
-                        <button class="st-action-btn st-toggle" title="Toggle Status">✓</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Card 3 -->
-                <div class="st-data-card">
-                <div class="st-card-header">
-                   
-                    <div class="st-card-title">
-                        <h3>Notice title</h3>
-                        <div class="st-card-subtitle">
-                            <span>2023-2025</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="st-card-body">
-                    <div class="st-data-item">
-                        <div class="st-data-label">Posted</div>
-                        <div class="st-data-value">24</div>
-                    </div>
-                
-                  
-                    <div class="st-description">
-                        A comprehensive course covering advanced algebra, calculus, and statistics. Perfect for students preparing for college entrance exams or higher education in STEM fields.
-                    </div>
-                </div>
-                <div class="st-card-footer">
-                    <div class="st-status">
-                        <div class="st-status-dot"></div>
-                        <div class="st-status-text">Active</div>
-                    </div>
-                    <div class="st-actions">
-                        <button class="st-action-btn st-edit" title="Edit">✏</button>
-                        <button class="st-action-btn st-delete" title="Delete">🗑</button>
-                        <button class="st-action-btn st-toggle" title="Toggle Status">✓</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Card 4 -->
-                <div class="st-data-card">
-                <div class="st-card-header">
-                   
-                    <div class="st-card-title">
-                        <h3>Notice title</h3>
-                        <div class="st-card-subtitle">
-                            <span>2023-2025</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="st-card-body">
-                    <div class="st-data-item">
-                        <div class="st-data-label">Posted</div>
-                        <div class="st-data-value">24</div>
-                    </div>
-                
-                  
-                    <div class="st-description">
-                        A comprehensive course covering advanced algebra, calculus, and statistics. Perfect for students preparing for college entrance exams or higher education in STEM fields.
-                    </div>
-                </div>
-                <div class="st-card-footer">
-                    <div class="st-status">
-                        <div class="st-status-dot"></div>
-                        <div class="st-status-text">Active</div>
-                    </div>
-                    <div class="st-actions">
-                        <button class="st-action-btn st-edit" title="Edit">✏</button>
-                        <button class="st-action-btn st-delete" title="Delete">🗑</button>
-                        <button class="st-action-btn st-toggle" title="Toggle Status">✓</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-                                </div>
-                                <!-- /product-list -->
-                            </div>
-                            <!-- /main-content-wrap -->
-                        </div>
-                        <!-- /main-content-wrap -->
-                        <!-- bottom-page -->
                         <div class="bottom-page">
                             <div class="body-text">Copyright © 2025 <a href="https://trivlogic.com">Trivlogic</a>. Design by Trivlogic All rights reserved</div>
                         </div>
-                        <!-- /bottom-page -->
                     </div>
+                
+                    <!-- Add/Edit Notice Modal -->
+                    <div id="noticeModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal()">&times;</span>
+                            <h4 id="modalTitle">Add New Notice</h4>
+                            <form id="noticeForm" enctype="multipart/form-data">
+                                <input type="hidden" id="noticeId" name="noticeId">
+                                
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" id="title" name="title" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" name="description" rows="4" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="notice">Notice Poster</label>
+                                    <input type="file" id="notice" name="notice" accept="image/*">
+                                    <div id="imagePreview" style="margin-top: 10px;"></div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="tf-button style-3" onclick="closeModal()">Cancel</button>
+                                    <button type="button" class="tf-button style-1" onclick="saveNotice()">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                
+                    <!-- Confirmation Modal -->
+                    <div id="confirmModal" class="modal">
+                        <div class="modal-content" style="max-width: 400px;">
+                            <div class="modal-header">
+                                <h3>Confirm Action</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p id="confirmMessage">Are you sure you want to delete this notice?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="tf-button style-3" onclick="closeConfirmModal()">Cancel</button>
+                                <button type="button" id="confirmActionButton" class="tf-button style-3">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <script>
+                        // Modal functions
+                        function openModal(notice = null) {
+                            const modal = document.getElementById('noticeModal');
+                            const form = document.getElementById('noticeForm');
+                            const modalTitle = document.getElementById('modalTitle');
+                            
+                            if (notice) {
+                                modalTitle.textContent = 'Edit Notice';
+                                document.getElementById('noticeId').value = notice._id;
+                                document.getElementById('title').value = notice.title;
+                                document.getElementById('date').value = new Date(notice.date).toISOString().split('T')[0];
+                                document.getElementById('description').value = notice.description;
+                                
+                                // Show image preview if exists
+                                const imagePreview = document.getElementById('imagePreview');
+                                if (notice.posterUrl) {
+                                    imagePreview.innerHTML = `<img src="${notice.posterUrl}" alt="Current Poster" style="max-width: 200px; max-height: 150px;">`;
+                                } else {
+                                    imagePreview.innerHTML = '';
+                                }
+                            } else {
+                                modalTitle.textContent = 'Add New Notice';
+                                form.reset();
+                                document.getElementById('imagePreview').innerHTML = '';
+                            }
+                            
+                            modal.style.display = 'flex';
+                        }
+                
+                        function closeModal() {
+                            document.getElementById('noticeModal').style.display = 'none';
+                        }
+                
+                        // Image preview
+                        document.getElementById('notice').addEventListener('change', function(e) {
+                            const file = e.target.files[0];
+                            if (file) {
+                                const reader = new FileReader();
+                                reader.onload = function(event) {
+                                    document.getElementById('imagePreview').innerHTML = 
+                                        `<img src="${event.target.result}" alt="Preview" style="max-width: 200px; max-height: 150px;">`;
+                                };
+                                reader.readAsDataURL(file);
+                            }
+                        });
+                
+                        // Notice CRUD operations
+                        async function saveNotice() {
+                            const form = document.getElementById('noticeForm');
+                            const formData = new FormData(form);
+                            const noticeId = document.getElementById('noticeId').value;
+                            const url = noticeId ? `/notice/${noticeId}` : '/notice';
+                            const method = noticeId ? 'PUT' : 'POST';
+                
+                            try {
+                                const response = await fetch(url, {
+                                    method: method,
+                                    body: formData
+                                });
+                
+                                const result = await response.json();
+                
+                                if (response.ok) {
+                                    alert(noticeId ? 'Notice updated successfully!' : 'Notice created successfully!');
+                                    window.location.reload();
+                                } else {
+                                    throw new Error(result.message || 'Failed to save notice');
+                                }
+                            } catch (error) {
+                                console.error('Error:', error);
+                                alert(error.message);
+                            }
+                        }
+                
+                        async function editNotice(id) {
+                            try {
+                                const response = await fetch(`/notice/${id}`);
+                                const notice = await response.json();
+                
+                                if (response.ok) {
+                                    openModal(notice);
+                                } else {
+                                    throw new Error(notice.message || 'Failed to fetch notice');
+                                }
+                            } catch (error) {
+                                console.error('Error:', error);
+                                alert(error.message);
+                            }
+                        }
+                
+                        function confirmDelete(id) {
+                            const modal = document.getElementById('confirmModal');
+                            modal.style.display = 'flex';
+                
+                            document.getElementById('confirmMessage').textContent = 'Are you sure you want to delete this notice? This action cannot be undone.';
+                
+                            document.getElementById('confirmActionButton').onclick = function() {
+                                deleteNotice(id);
+                            };
+                        }
+                
+                        async function deleteNotice(id) {
+                            try {
+                                const response = await fetch(`/notice/${id}`, {
+                                    method: 'DELETE'
+                                });
+                
+                                const result = await response.json();
+                
+                                if (response.ok) {
+                                    alert('Notice deleted successfully!');
+                                    document.getElementById(`notice-${id}`).remove();
+                                    closeConfirmModal();
+                                    
+                                    // Update showing info
+                                    updateShowingInfo();
+                                } else {
+                                    throw new Error(result.message || 'Failed to delete notice');
+                                }
+                            } catch (error) {
+                                console.error('Error:', error);
+                                alert(error.message);
+                            }
+                        }
+                
+                        async function toggleStatus(id, currentStatus) {
+                            try {
+                                const response = await fetch(`/notice/${id}/toggle`, {
+                                    method: 'PATCH'
+                                });
+                
+                                const result = await response.json();
+                
+                                if (response.ok) {
+                                    // Update the UI without reloading
+                                    const statusElement = document.querySelector(`#notice-${id} .st-status`);
+                                    const statusText = document.querySelector(`#notice-${id} .st-status-text`);
+                                    const toggleButton = document.querySelector(`#notice-${id} .st-toggle`);
+                                    
+                                    if (result.isActive) {
+                                        statusElement.classList.remove('st-status-inactive');
+                                        statusText.textContent = 'Active';
+                                        toggleButton.classList.remove('inactive');
+                                    } else {
+                                        statusElement.classList.add('st-status-inactive');
+                                        statusText.textContent = 'Inactive';
+                                        toggleButton.classList.add('inactive');
+                                    }
+                                } else {
+                                    throw new Error(result.message || 'Failed to update status');
+                                }
+                            } catch (error) {
+                                console.error('Error:', error);
+                                alert(error.message);
+                            }
+                        }
+                
+                        function closeConfirmModal() {
+                            document.getElementById('confirmModal').style.display = 'none';
+                        }
+                
+                        function updateShowingInfo() {
+                            const noticeCount = document.querySelectorAll('.st-data-card').length;
+                            document.querySelector('.st-page-info').textContent = `Showing 1-${noticeCount} of ${noticeCount} notices`;
+                        }
+                
+                        // Close modals when clicking outside
+                        window.onclick = function(event) {
+                            const noticeModal = document.getElementById('noticeModal');
+                            const confirmModal = document.getElementById('confirmModal');
+                            
+                            if (event.target === noticeModal) {
+                                noticeModal.style.display = 'none';
+                            }
+                            if (event.target === confirmModal) {
+                                confirmModal.style.display = 'none';
+                            }
+                        };
+                
+                        // Pagination function
+                        function updatePagination() {
+                            const entriesPerPage = document.getElementById('entriesPerPage').value;
+                            // Implement pagination logic here
+                            console.log(`Show ${entriesPerPage} entries per page`);
+                        }
+                    </script>
                     <!-- /main-content -->
                 </div>
                 <!-- /section-content-right -->
@@ -632,116 +769,7 @@
     <!-- /#wrapper -->
 
     <!-- Javascript -->
-    <script>
-        // Function to open the modal
-        function openModal() {
-            document.getElementById('modalOverlay').classList.add('pm-active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
-        }
-        
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById('modalOverlay').classList.remove('pm-active');
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        }
-        
-        // Function to handle file input changes
-        document.getElementById('courseImage').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const uploadArea = document.getElementById('imageUpload');
-                    uploadArea.innerHTML = `
-                        <img src="${event.target.result}" alt="Preview" style="max-width: 100%; max-height: 200px; border-radius: 0.5rem;">
-                        <div class="pm-upload-hint" style="margin-top: 1rem;">Click to change image</div>
-                    `;
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-        
-        // Function to save the form data
-        function saveForm() {
-            // Here you would handle the form submission
-            // For demonstration, we'll just close the modal
-            alert('Course saved successfully!');
-            closeModal();
-            
-            // Reset the form
-            document.getElementById('courseForm').reset();
-            document.getElementById('imageUpload').innerHTML = `
-                <div class="pm-upload-icon">📷</div>
-                <div class="pm-upload-text">Click to upload image</div>
-                <div class="pm-upload-hint">Supports: JPG, PNG (Max: 5MB)</div>
-            `;
-        }
-        
-        // Close the modal if the user clicks outside of it
-        document.getElementById('modalOverlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-
-            document.querySelectorAll('.st-toggle').forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.classList.toggle('inactive');
-                
-                // Find the parent card
-                const card = this.closest('.st-data-card');
-                const statusEl = card.querySelector('.st-status');
-                const statusTextEl = statusEl.querySelector('.st-status-text');
-                
-                // Toggle status
-                if (this.classList.contains('inactive')) {
-                    statusEl.classList.add('st-status-inactive');
-                    statusTextEl.textContent = 'Inactive';
-                } else {
-                    statusEl.classList.remove('st-status-inactive');
-                    statusTextEl.textContent = 'Active';
-                }
-            });
-        });
-        
-        // Delete button functionality
-        document.querySelectorAll('.st-delete').forEach(btn => {
-            btn.addEventListener('click', function() {
-                if (confirm('Are you sure you want to delete this course?')) {
-                    const card = this.closest('.st-data-card');
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(-10px)';
-                    card.style.transition = 'all 0.3s ease';
-                    setTimeout(() => {
-                        card.remove();
-                    }, 300);
-                }
-            });
-        });
-        
-        // Edit button functionality 
-        document.querySelectorAll('.st-edit').forEach(btn => {
-            btn.addEventListener('click', function() {
-                alert('Edit functionality would open a modal form');
-            });
-        });
-        
-        // Search functionality
-        document.querySelector('.st-search-input').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            document.querySelectorAll('.st-data-card').forEach(card => {
-                const title = card.querySelector('.st-card-title h3').textContent.toLowerCase();
-                const description = card.querySelector('.st-description').textContent.toLowerCase();
-                
-                if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    </script>
+  
     <script src="/admin-js/jquery.min.js"></script>
     <script src="/admin-js/bootstrap.min.js"></script>
     <script src="/admin-js/bootstrap-select.min.js"></script>

@@ -1,12 +1,35 @@
 const express = require('express');
 const router = express.Router();
+const Academic = require('../models/Academic');
+const Alumni = require('../models/Alumni');
+const Banner = require('../models/Banner');
+const Event = require('../models/Event');
+const Gallery = require('../models/Gallery');
+const Notice = require('../models/Notice');
 
 
 
 
 router.get('/', async (req, res) => {
     try {
-        res.render('home', { title: 'home'});
+        const [banners, events, galleries, notices, academics, alumni] = await Promise.all([
+            Banner.find({ isActive: true }).sort({ createdAt: -1 }),
+            Event.find({ isActive: true }).sort({ createdAt: -1 }),
+            Gallery.find({ isActive: true }).sort({ createdAt: -1 }),
+            Notice.find({ isActive: true }).sort({ createdAt: -1 }),
+            Academic.find().sort({ createdAt: -1 }),
+            Alumni.find().sort({ date: -1 })
+        ]);
+
+        res.render('home', {
+            title: 'Home',
+            banners,
+            events,
+            galleries,
+            notices,
+            academics,
+            alumni
+        });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error loading home page data');
