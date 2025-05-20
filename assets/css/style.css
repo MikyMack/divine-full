@@ -4211,7 +4211,7 @@ a.text-theme:hover,
 }
 
 .footer-layout1 .footer-top {
-  padding: 60px 0 0 0;
+  padding:0px 0 0 0;
 }
 
 .footer-call {
@@ -10480,6 +10480,7 @@ body.layout5 .slick-dots li.slick-active button {
   overflow: hidden;
   border-radius: 35px;
   min-width: 100px;
+
 }
 
 .class-style1 .class-img img {
@@ -10670,6 +10671,9 @@ body.layout5 .slick-dots li.slick-active button {
 
   .class-style2 .class-title {
     font-size: 22px;
+  }
+  .class-style1 .class-img img{
+    width: 100%!important;
   }
 }
 
@@ -19742,3 +19746,88 @@ textarea.pm-form-control {
     transform: translateX(-100%);
   }
 }
+.abt-img{
+  height: 500px!important;
+  object-fit: cover;
+}
+.side-images{
+  height: 380px!important;
+  object-fit: cover;
+}
+@media(max-width:500px){
+  .abt-img,.abt-img-2{
+    width: 100%!important;
+    height: 300px!important;
+  }
+
+}
+
+
+.notice-btn{
+ font-size: 20px;
+}
+ .swiper-container {
+            position: relative;
+            width: 100%;
+        margin-top: 2rem;
+            background-color: #fff;
+         
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .dots-container {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ccc;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            width: 24px;
+            background-color: var(--primary-orange);
+            border-radius: 5px;
+        }
+        
+        @keyframes slideDots {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            33.33% {
+                transform: translateX(-32px);
+            }
+            66.66% {
+                transform: translateX(-64px);
+            }
+        }
+        
+        .dots-container {
+            animation: bounce 1.5s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+        }
+        .insta-view-more{
+       text-align: center;
+       font-size: 20px;
+        }
+     .btn-active{
+      color: var(--primary-orange)!important;
+     }
