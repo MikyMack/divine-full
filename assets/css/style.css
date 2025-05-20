@@ -19831,3 +19831,12 @@ textarea.pm-form-control {
      .btn-active{
       color: var(--primary-orange)!important;
      }
+
+     @media (max-width: 991px) {
+
+      .copyright-text{
+        margin-bottom: 5rem!important;
+        font-size: 12px!important;
+    
+      }
+    }

@@ -560,7 +560,7 @@
                 </div>
                 <div class="col-xl-auto col-lg-6 mb-30">
                     <div class="img-box11">
-                        <img src="/img/images/student1.jpg" alt="ab" class="img1  abt-img" loading="lazy">
+                        <img src="/img/images/student8.JPG" alt="ab" class="img1  abt-img" loading="lazy">
                         <img src="/img/images/student2.JPG" alt="ab" class="img2 abt-img-2" loading="lazy">
 
                     </div>
@@ -1004,7 +1004,7 @@
                 </div>
                 <div class="col-xl-auto order-1 order-xl-2 d-none d-xl-block">
                     <img src="/img/images/school.JPG" alt="feature" loading="lazy"
-                        style="width: 360px; height: 360px; object-fit: cover; border-radius: 50%;">
+                        style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%;">
                 </div>
 
                 <div class="col-md-6 col-xl-auto  order-3 order-xl-3">
@@ -1428,7 +1428,7 @@
             <div class="container">
                 <div class="row gx-60 gy-4 text-center text-lg-start justify-content-between align-items-center">
                     <div class="col-lg"><a href="/"><img style="height: 120px!important; width: 120px!important;"
-                                src="/img/devin.png" alt="logo"></a></div>
+                                src="/img/devin.png" alt="logo" loading="lazy"></a></div>
                     <div class="col-lg-auto">
                         <h3 class="h4 mb-0 text-white"><img src="/img/icon/check-list.svg" alt="icon" class="me-2">
                             Enrol your child in a Session now!</h3>
@@ -1912,58 +1912,92 @@
             }
         }
     </style>
- <script>
+<script>
     window.addEventListener('DOMContentLoaded', () => {
-        const storedData = JSON.parse(localStorage.getItem('admissionPopupData')) || {};
-        const today = new Date().toLocaleDateString();
-
-        // Reset if it's a new day
-        if (storedData.date !== today) {
-            storedData.date = today;
-            storedData.shownCount = 0;
-        }
-
-        // Show popup if under limit
-        if (storedData.shownCount < 2) {
-            document.getElementById('admissionPopup').style.display = 'flex';
-            storedData.shownCount += 1;
-            localStorage.setItem('admissionPopupData', JSON.stringify(storedData));
-        }
-
-        // Close popup event
+        const popup = document.getElementById('admissionPopup');
+        const popupContent = document.querySelector('.popup-content');
         const closeBtn = document.getElementById('closePopup');
-        if (closeBtn) {
-            closeBtn.addEventListener('click', () => {
-                document.getElementById('admissionPopup').style.display = 'none';
-            });
+        const now = new Date();
+        const storageKey = 'admissionPopupData';
+        
+        // Initialize or get stored data
+        let storedData;
+        try {
+            storedData = JSON.parse(localStorage.getItem(storageKey)) || {};
+        } catch (e) {
+            storedData = {};
         }
-
+        
+        // Set defaults if missing
+        storedData.lastClosed = storedData.lastClosed || null;
+        storedData.lastShownDate = storedData.lastShownDate || null;
+        
+        // Check if it's a new day (after midnight)
+        const today = now.toLocaleDateString();
+        const isNewDay = storedData.lastShownDate !== today;
+        
+        // Only show if it's a new day or never shown before
+        if (isNewDay || !storedData.lastShownDate) {
+            popup.style.display = 'flex';
+            storedData.lastShownDate = today;
+            localStorage.setItem(storageKey, JSON.stringify(storedData));
+        }
+        
+        // Close button handler
+        closeBtn.addEventListener('click', () => {
+            closePopup();
+        });
+        
+        // Close when clicking outside the form
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                closePopup();
+            }
+        });
+        
+        // Prevent closing when clicking inside the form
+        popupContent.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        
+        function closePopup() {
+            popup.style.display = 'none';
+            // Update last closed time
+            const updateData = JSON.parse(localStorage.getItem(storageKey)) || {};
+            updateData.lastClosed = new Date().toISOString();
+            localStorage.setItem(storageKey, JSON.stringify(updateData));
+        }
+        
         // WhatsApp form submission
-        window.sendAdmissionToWhatsApp = function (event) {
+        window.sendAdmissionToWhatsApp = function(event) {
             event.preventDefault();
-
+            
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const contact = document.getElementById("contact").value;
             const childName = document.getElementById("childName").value;
             const age = document.getElementById("age").value;
             const className = document.getElementById("class").value;
-
+    
             const message = `*New Admission Inquiry (2025-2026)*\n
-👤 *Parent Name:* ${name}
-📧 *Email:* ${email}
-📞 *Contact:* ${contact}
-👶 *Child's Name:* ${childName}
-🎂 *Age:* ${age}
-🏫 *Class to Join:* ${className}`;
-
+    👤 *Parent Name:* ${name}
+    📧 *Email:* ${email}
+    📞 *Contact:* ${contact}
+    👶 *Child's Name:* ${childName}
+    🎂 *Age:* ${age}
+    🏫 *Class to Join:* ${className}`;
+    
             const whatsappNumber = "919895361126";
             const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
             window.open(url, '_blank');
             alert("Thank you! Redirecting to WhatsApp.");
-        }
+            
+            // Close popup after submission
+            closePopup();
+        };
     });
-</script>
+    </script>
 
 
 
