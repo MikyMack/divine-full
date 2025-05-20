@@ -13,16 +13,14 @@ app.use(express.static(path.join(__dirname, '../assets')));
 app.set('view engine', 'ejs');
 
 // Sessions
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-  cookie: { 
-    secure: true, 
-    maxAge: 7 * 24 * 60 * 60 * 1000
-  }
-}));
+app.use(
+  session({
+      secret: process.env.SESSION_SECRET, 
+      resave: false,
+      saveUninitialized: false,
+      store: MongoStore.create({ mongoUrl: process.env.MONGO_URI })
+  })
+);
 
 // Routes
 const adminRoutes = require('./routes/adminRoutes');
