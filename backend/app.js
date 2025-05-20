@@ -9,7 +9,7 @@ const app = express();
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../assets')));
 app.set('view engine', 'ejs');
 
 // Sessions
@@ -19,8 +19,8 @@ app.use(session({
   saveUninitialized: false,
   store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
   cookie: { 
-    secure: false, // Set to true if using HTTPS
-    maxAge: 3600000 // 1 hour
+    secure: true, 
+    maxAge: 7 * 24 * 60 * 60 * 1000
   }
 }));
 
