@@ -225,86 +225,61 @@
     </div><!--==============================
     Classes Area
     ==============================-->
-    <section class=" space-top space-extra-bottom">
+    <section class="space-top space-extra-bottom">
         <div class="container">
-            <div class="row gx-50 gy-gx">
-                <div class="col-md-6">
-                    <div class="class-style1">
-                        <div class="class-img"><a href="/academics"><img src="/img/class/cl-1-1.jpg"
-                                    alt="class"></a></div>
-                        <div class="class-content">
-                            <h3 class="class-title"><a class="text-inherit" href="/academics">Foundational Stag</a></h3>
-                            <p class="class-info">Available: <span class="info">20 Seats</span></p>
-                            <p class="class-info">Required Age: <span class="info">2 - 6 Years</span></p>
-                            <p class="acad-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cupiditate dolor similique eius natus officia est consequuntur officiis deleniti qui deserunt aspernatur illum, quibusdam repellendus expedita? Error nulla culpa eius!</p>
-                            <p class="class-price">₹2283 <span class="duration">/ month</span></p>
-                            <a href="/academics" class="class-btn"><i class="far fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
+          <div class="row gx-50 gy-gx">
+            <% academics.forEach(academic => { %>
               <div class="col-md-6">
-                    <div class="class-style1">
-                        <div class="class-img"><a href="/academics"><img src="/img/class/cl-1-1.jpg"
-                                    alt="class"></a></div>
-                        <div class="class-content">
-                            <h3 class="class-title"><a class="text-inherit" href="/academics">Foundational Stag</a></h3>
-                            <p class="class-info">Available: <span class="info">20 Seats</span></p>
-                            <p class="class-info">Required Age: <span class="info">2 - 6 Years</span></p>
-                            <p class="acad-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cupiditate dolor similique eius natus officia est consequuntur officiis deleniti qui deserunt aspernatur illum, quibusdam repellendus expedita? Error nulla culpa eius!</p>
-                            <p class="class-price">₹2283 <span class="duration">/ month</span></p>
-                            <a href="/academics" class="class-btn"><i class="far fa-plus"></i></a>
-                        </div>
-                    </div>
+                <div class="class-style1">
+                  <div class="class-img">
+                    <a href="/academicsDetails/<%= academic._id %>">
+                      <img src="<%= academic.image %>" alt="<%= academic.title %>" style="object-fit: cover;">
+                    </a>
+                  </div>
+                  <div class="class-content">
+                    <h3 class="class-title">
+                      <a class="text-inherit" href="/academicsDetails/<%= academic._id %>">
+                        <%= academic.title %>
+                      </a>
+                    </h3>
+                    <p class="class-info">Available: <span class="info"><%= academic.availableSeats %> Seats</span></p>
+                    <p class="class-info">Required Age: <span class="info"><%= academic.requiredAge %></span></p>
+      
+                    <% const shortDesc = academic.description.length > 150 ? academic.description.slice(0, 150) + '...' : academic.description; %>
+                    <p class="acad-dis"><%= shortDesc %></p>
+      
+                    <a href="/academicsDetails/<%= academic._id %>" class="class-btn">
+                      <i class="far fa-plus"></i> 
+                    </a>
+                  </div>
                 </div>
-              <div class="col-md-6">
-                    <div class="class-style1">
-                        <div class="class-img"><a href="/academics"><img src="/img/class/cl-1-1.jpg"
-                                    alt="class"></a></div>
-                        <div class="class-content">
-                            <h3 class="class-title"><a class="text-inherit" href="/academics">Foundational Stag</a></h3>
-                            <p class="class-info">Available: <span class="info">20 Seats</span></p>
-                            <p class="class-info">Required Age: <span class="info">2 - 6 Years</span></p>
-                            <p class="acad-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cupiditate dolor similique eius natus officia est consequuntur officiis deleniti qui deserunt aspernatur illum, quibusdam repellendus expedita? Error nulla culpa eius!</p>
-                            <p class="class-price">₹2283 <span class="duration">/ month</span></p>
-                            <a href="/academics" class="class-btn"><i class="far fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-              <div class="col-md-6">
-                    <div class="class-style1">
-                        <div class="class-img"><a href="/academics"><img src="/img/class/cl-1-1.jpg"
-                                    alt="class"></a></div>
-                        <div class="class-content">
-                            <h3 class="class-title"><a class="text-inherit" href="/academics">Foundational Stag</a></h3>
-                            <p class="class-info">Available: <span class="info">20 Seats</span></p>
-                            <p class="class-info">Required Age: <span class="info">2 - 6 Years</span></p>
-                            <p class="acad-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cupiditate dolor similique eius natus officia est consequuntur officiis deleniti qui deserunt aspernatur illum, quibusdam repellendus expedita? Error nulla culpa eius!</p>
-                            <p class="class-price">₹2283 <span class="duration">/ month</span></p>
-                            <a href="/academics" class="class-btn"><i class="far fa-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-               
-            
+              </div>
+            <% }); %>
+          </div>
+      
+          <!-- Pagination -->
+          <div class="text-center mt-30">
+            <div class="vs-pagination pt-md-3">
+              <% if (currentPage > 1) { %>
+                <a href="?page=<%= currentPage - 1 %>" class="pagi-btn">Prev</a>
+              <% } %>
+      
+              <ul>
+                <% for (let i = 1; i <= totalPages; i++) { %>
+                  <li><a class="<%= currentPage === i ? 'active' : '' %>" href="?page=<%= i %>"><%= i %></a></li>
+                <% } %>
+              </ul>
+      
+              <% if (currentPage < totalPages) { %>
+                <a href="?page=<%= currentPage + 1 %>" class="pagi-btn">Next</a>
+              <% } %>
             </div>
-            <div class="text-center mt-30">
-                <div class="vs-pagination pt-md-3">
-                    <a href="#" class="pagi-btn">Prev</a>
-                    <ul>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">...</a></li>
-                        <li><a href="#">12</a></li>
-                    </ul>
-                    <a href="#" class="pagi-btn">next</a>
-                </div>
-            </div>
+          </div>
         </div>
-    </section><!--==============================
-			Footer Area
-	==============================-->
+      </section>
+      
+
+
   <footer class="footer-wrapper footer-layout1" data-bg-src="/img/bg/footer-bg-1-1.png">
         <div class="footer-top">
             <div class="container">
@@ -459,12 +434,7 @@
         </div>
         <span>Alumni</span>
     </a>
-        <a href="/contact" class="nav-item">
-            <div class="nav-icon">
-                <i class="fas fa-phone-alt"></i>
-            </div>
-            <span>Contact</span>
-        </a>
+      
     </nav>
     <!--********************************
 			Code End  Here 

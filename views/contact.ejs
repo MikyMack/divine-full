@@ -274,35 +274,64 @@
                         <span class="sec-subtitle">Have Any questions? so plese</span>
                         <h2 class="sec-title">Feel Free to Contact!</h2>
                     </div>
-                    <form action="https://html.vecurosoft.com/kiddino/demo/mail.php" class="form-style3 layout2 ajax-contact">
+                    <form id="web3form" class="form-style3 layout2">
+                        <input type="hidden" name="access_key" value="89a23a49-2bf3-44a7-8217-2673a0de69e3">
+                      
                         <div class="row justify-content-between">
-                            <div class="col-md-6 form-group">
-                                <label>First Name <span class="required">(Required)</span></label>
-                                <input name="firstname" id="firstname" type="text">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Last Name <span class="required">(Required)</span></label>
-                                <input name="lastname" id="lastname" type="text">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Email Address <span class="required">(Required)</span></label>
-                                <input name="email" id="email" type="email">
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <label>Phone Number <span class="required">(Required)</span></label>
-                                <input name="number" id="number" type="number">
-                            </div>
-                            <div class="col-12 form-group">
-                                <label>Message <span class="required">(Required)</span></label>
-                                <textarea name="message" id="message" cols="30" rows="10"
-                                    placeholder="Type your message"></textarea>
-                            </div>
-                            <div class="col-auto form-group">
-                                <button class="vs-btn" type="submit">Send Message</button>
-                            </div>
-                            <p class="form-messages"></p>
+                          <div class="col-md-6 form-group">
+                            <label>First Name <span class="required">(Required)</span></label>
+                            <input name="First Name" type="text" required>
+                          </div>
+                          <div class="col-md-6 form-group">
+                            <label>Last Name <span class="required">(Required)</span></label>
+                            <input name="Last Name" type="text" required>
+                          </div>
+                          <div class="col-md-6 form-group">
+                            <label>Email Address <span class="required">(Required)</span></label>
+                            <input name="email" type="email" required>
+                          </div>
+                          <div class="col-md-6 form-group">
+                            <label>Phone Number <span class="required">(Required)</span></label>
+                            <input name="Phone Number" type="tel" required>
+                          </div>
+                          <div class="col-12 form-group">
+                            <label>Message <span class="required">(Required)</span></label>
+                            <textarea name="message" cols="30" rows="10" required></textarea>
+                          </div>
+                          <div class="col-auto form-group">
+                            <button class="vs-btn" type="submit">Send Message</button>
+                          </div>
                         </div>
-                    </form>
+                      </form>
+                      
+                      <script>
+                        document.getElementById("web3form").addEventListener("submit", async function(e) {
+                          e.preventDefault(); // Prevent page reload
+                      
+                          const formData = new FormData(this);
+                      
+                          try {
+                            const res = await fetch("https://api.web3forms.com/submit", {
+                              method: "POST",
+                              body: formData
+                            });
+                      
+                            const result = await res.json();
+                      
+                            if (result.success) {
+                              alert("✅ Message sent successfully!");
+                              this.reset();
+                            } else {
+                              alert("❌ Failed to send message. Please try again.");
+                            }
+                          } catch (err) {
+                            alert("❌ An error occurred while sending the message.");
+                          }
+                        });
+                      </script>
+                      
+                      
+                      
                 </div>
             </div>
         </div>

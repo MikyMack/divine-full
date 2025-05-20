@@ -241,109 +241,111 @@
     </div><!--==============================
     Classes Area
     ==============================-->
-    <section class=" space-top space-extra-bottom">
+    <section class="space-top space-extra-bottom"> 
         <div class="container">
             <div class="row justify-content-center">
-                 <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="/img/blog/blog-1-1.jpg" alt="School Reopening" class="w-100">
-                        </div>
-                        <div class="blog-content">
-                            <a href="event-details.html" class="blog-date"><i class="fal fa-calendar-alt"></i>June 5, 2025</a>
-                            <h3 class="blog-title h5"><a href="event-details.html">School Reopening Day</a></h3>
-                            <p class="blog-text">We welcome our students back to campus after the summer break. Orientation sessions will be held for all new students.</p>
-                        </div>
-                         <a href="event-details.html" class="vs-btn d-flex justify-content-center">Read More<i class="far fa-angle-right"></i></a>
+    
+                <% if (events.length === 0) { %>
+                    <div class="col-12 text-center">
+                        <h4 class="text-danger">No active events found.</h4>
                     </div>
-                </div>
-                 <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="/img/blog/blog-1-1.jpg" alt="School Reopening" class="w-100">
-                        </div>
-                        <div class="blog-content">
-                            <a href="event-details.html" class="blog-date"><i class="fal fa-calendar-alt"></i>June 5, 2025</a>
-                            <h3 class="blog-title h5"><a href="event-details.html">School Reopening Day</a></h3>
-                            <p class="blog-text">We welcome our students back to campus after the summer break. Orientation sessions will be held for all new students.</p>
-                        </div>
-                        <a href="event-details.html" class="vs-btn d-flex justify-content-center">Read More<i class="far fa-angle-right"></i></a>
-                    </div>
-                </div>
-                 <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="/img/blog/blog-1-1.jpg" alt="School Reopening" class="w-100">
-                        </div>
-                        <div class="blog-content">
-                            <a href="event-details.html" class="blog-date"><i class="fal fa-calendar-alt"></i>June 5, 2025</a>
-                            <h3 class="blog-title h5"><a href="event-details.html">School Reopening Day</a></h3>
-                            <p class="blog-text">We welcome our students back to campus after the summer break. Orientation sessions will be held for all new students.</p>
-                        </div>
-                         <a href="event-details.html" class="vs-btn d-flex justify-content-center">Read More<i class="far fa-angle-right"></i></a>
-                    </div>
-                </div>
-             <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="/img/blog/blog-1-1.jpg" alt="School Reopening" class="w-100">
-                        </div>
-                        <div class="blog-content">
-                            <a href="event-details.html" class="blog-date"><i class="fal fa-calendar-alt"></i>June 5, 2025</a>
-                            <h3 class="blog-title h5"><a href="event-details.html">School Reopening Day</a></h3>
-                            <p class="blog-text">We welcome our students back to campus after the summer break. Orientation sessions will be held for all new students.</p>
-                        </div>
-   <a href="event-details.html" class="vs-btn d-flex justify-content-center">Read More<i class="far fa-angle-right"></i></a>
-                    </div>
-                </div>
-                    <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="/img/blog/blog-1-1.jpg" alt="School Reopening" class="w-100">
-                        </div>
-                        <div class="blog-content">
-                            <a href="event-details.html" class="blog-date"><i class="fal fa-calendar-alt"></i>June 5, 2025</a>
-                            <h3 class="blog-title h5"><a href="event-details.html">School Reopening Day</a></h3>
-                            <p class="blog-text">We welcome our students back to campus after the summer break. Orientation sessions will be held for all new students.</p>
-                        </div>
-   <a href="event-details.html" class="vs-btn d-flex justify-content-center">Read More<i class="far fa-angle-right"></i></a>
-                    </div>
-                </div>
-                    <div class="col-xl-4">
-                    <div class="vs-blog blog-style1">
-                        <div class="blog-img">
-                            <img src="/img/blog/blog-1-1.jpg" alt="School Reopening" class="w-100">
-                        </div>
-                        <div class="blog-content">
-                            <a href="event-details.html" class="blog-date"><i class="fal fa-calendar-alt"></i>June 5, 2025</a>
-                            <h3 class="blog-title h5"><a href="event-details.html">School Reopening Day</a></h3>
-                            <p class="blog-text">We welcome our students back to campus after the summer break. Orientation sessions will be held for all new students.</p>
-                        </div>
-                    <a href="event-details.html" class="vs-btn d-flex justify-content-center">Read More<i class="far fa-angle-right"></i></a>
-                    </div>
-                </div>
-         
-         
-        
-         
+                <% } else { %>
+                    <% events.forEach(event => { %>
+                        <div class="col-xl-4 col-md-6 mb-4 d-flex">
+                            <div class="vs-blog blog-style1 d-flex flex-column w-100" style="min-height: 550px;">
+                          
+                              <!-- Image -->
+                              <div class="blog-img" style="height: 250px; overflow: hidden;">
+                                <img src="<%= event.image %>" alt="<%= event.title %>" style="width: 100%; height: 100%; object-fit: cover;">
+                              </div>
+                          
+                              <!-- Content -->
+                              <div class="blog-content flex-grow-1 d-flex flex-column">
+                                <!-- Date -->
+                                <span class="blog-date">
+                                  <i class="fal fa-calendar-alt"></i>
+                                  <%= event.date.toDateString() %>
+                                </span>
+                          
+                                <!-- Title -->
+                                <h3 class="blog-title h5">
+                                  <a href="#"><%= event.title %></a>
+                                </h3>
+                          
+                                <!-- Description with Read More -->
+                                <p class="blog-text">
+                                  <span class="short-desc"><%= event.description.substring(0, 120) %></span>
+                                  <span class="full-desc d-none"><%= event.description %></span>
+                                  <% if (event.description.length > 120) { %>
+                                    <button class="btn btn-link p-0 read-more-btn">Read More</button>
+                                  <% } %>
+                                </p>
+                          
+                                <!-- Additional Fields -->
+                                <p class="mb-1"><strong>Place:</strong> <%= event.eventPlace %></p>
+                                <p class="mb-1"><strong>Coordinator:</strong> <%= event.coordinatorName %></p>
+                                <p class="mb-3"><strong>Contact:</strong> <%= event.coordinatorContact %></p>
+                              </div>
+                          
+                              <!-- Button -->
+                              <a href="/contact" class="vs-btn d-flex justify-content-center mt-auto">
+                                Register Now <i class="far fa-angle-right"></i>
+                              </a>
+                          
+                            </div>
+                          </div>
+                          
+                    <% }); %>
+                <% } %>
+    
             </div>
+    
+            <% if (totalPages > 1) { %>
             <div class="text-center">
                 <div class="vs-pagination pt-md-3">
-                    <a href="#" class="pagi-btn">Prev</a>
+                    <% if (currentPage > 1) { %>
+                        <a href="?page=<%= currentPage - 1 %>" class="pagi-btn">Prev</a>
+                    <% } %>
+    
                     <ul>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">...</a></li>
-                        <li><a href="#">12</a></li>
+                        <% for (let i = 1; i <= totalPages; i++) { %>
+                            <li>
+                                <a class="<%= currentPage === i ? 'active' : '' %>" href="?page=<%= i %>"><%= i %></a>
+                            </li>
+                        <% } %>
                     </ul>
-                    <a href="#" class="pagi-btn">next</a>
+    
+                    <% if (currentPage < totalPages) { %>
+                        <a href="?page=<%= currentPage + 1 %>" class="pagi-btn">Next</a>
+                    <% } %>
                 </div>
             </div>
+            <% } %>
         </div>
-    </section><!--==============================
-			Footer Area
-	==============================-->
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll(".read-more-btn").forEach(button => {
+            button.addEventListener("click", () => {
+              const card = button.closest(".blog-text");
+              const shortDesc = card.querySelector(".short-desc");
+              const fullDesc = card.querySelector(".full-desc");
+      
+              if (fullDesc.classList.contains("d-none")) {
+                shortDesc.style.display = "none";
+                fullDesc.classList.remove("d-none");
+                button.textContent = "Read Less";
+              } else {
+                shortDesc.style.display = "inline";
+                fullDesc.classList.add("d-none");
+                button.textContent = "Read More";
+              }
+            });
+          });
+        });
+      </script>
+      
+    
        <footer class="footer-wrapper footer-layout1" data-bg-src="/img/bg/footer-bg-1-1.png">
         <div class="footer-top">
             <div class="container">

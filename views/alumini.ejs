@@ -640,7 +640,7 @@
         </div>
     </header>
     <div class="alumni-container">
-        <button class="alum-register-btn" id="openFormModal">
+        <button class="alum-register-btn" id="openFormModal" style="margin-top: 20px;">
             <i class="fas fa-user-plus"></i>
             Drop Your Thoughts
         </button>
@@ -657,61 +657,65 @@
                     <p>Share your journey and stay connected with fellow graduates</p>
                 </div>
 
-                <form class="alum-form">
-                    <div class="alum-form-group">
-                        <label for="alum-name" class="alum-form-label">Full Name</label>
-                        <div class="alum-form-input-wrapper">
-                            <i class="fas fa-user alum-form-icon"></i>
-                            <input type="text" id="alum-name" class="alum-form-input alum-form-input-icon"
-                                placeholder="Your full name" required>
-                        </div>
-                    </div>
+                <form class="alum-form" id="alumForm" enctype="multipart/form-data">
 
                     <div class="alum-form-group">
-                        <label for="alum-email" class="alum-form-label">Email Address</label>
-                        <div class="alum-form-input-wrapper">
-                            <i class="fas fa-envelope alum-form-icon"></i>
-                            <input type="email" id="alum-email" class="alum-form-input alum-form-input-icon"
-                                placeholder="Your email address" required>
-                        </div>
+                      <label for="alum-name" class="alum-form-label">Full Name</label>
+                      <div class="alum-form-input-wrapper">
+                        <i class="fas fa-user alum-form-icon"></i>
+                        <input type="text" name="name" id="alum-name" class="alum-form-input alum-form-input-icon" placeholder="Your full name" required>
+                      </div>
                     </div>
-
+                  
                     <div class="alum-form-group">
-                        <label for="alum-phone" class="alum-form-label">Phone Number</label>
-                        <div class="alum-form-input-wrapper">
-                            <i class="fas fa-phone-alt alum-form-icon"></i>
-                            <input type="tel" id="alum-phone" class="alum-form-input alum-form-input-icon"
-                                placeholder="Your phone number">
-                        </div>
+                      <label for="alum-email" class="alum-form-label">Email Address</label>
+                      <div class="alum-form-input-wrapper">
+                        <i class="fas fa-envelope alum-form-icon"></i>
+                        <input type="email" name="email" id="alum-email" class="alum-form-input alum-form-input-icon" placeholder="Your email address" required>
+                      </div>
                     </div>
-
+                  
                     <div class="alum-form-group">
-                        <label for="alum-graduation-date" class="alum-form-label">Graduation Date</label>
-                        <div class="alum-form-input-wrapper">
-                            <span class="mt-3"> <i class="fas fa-calendar-alt alum-form-icon"></i></span>
-                            <input type="date" id="alum-graduation-date" class="alum-form-input alum-form-input-icon"
-                                required>
-                        </div>
+                      <label for="alum-phone" class="alum-form-label">Phone Number</label>
+                      <div class="alum-form-input-wrapper">
+                        <i class="fas fa-phone-alt alum-form-icon"></i>
+                        <input type="tel" name="phone" id="alum-phone" class="alum-form-input alum-form-input-icon" placeholder="Your phone number">
+                      </div>
                     </div>
-
+                  
+                    <div class="alum-form-group">
+                      <label for="alum-graduation-date" class="alum-form-label">Graduation Date</label>
+                      <div class="alum-form-input-wrapper">
+                        <i class="fas fa-calendar-alt alum-form-icon"></i>
+                        <input type="date" name="date" id="alum-graduation-date" class="alum-form-input alum-form-input-icon" required>
+                      </div>
+                    </div>
+                    <div class="alum-form-group">
+                        <label for="alum-current-position" class="alum-form-label">Current Position</label>
+                        <div class="alum-form-input-wrapper">
+                          <i class="fas fa-briefcase alum-form-icon"></i>
+                          <input type="text" name="currentPosition" id="alum-current-position" class="alum-form-input alum-form-input-icon"
+                            placeholder="e.g., Software Engineer at Google">
+                        </div>
+                      </div>
+                      
                     <div class="alum-form-group full-width">
-                        <label for="alum-thoughts" class="alum-form-label">Your Thoughts</label>
-                        <textarea id="alum-thoughts" class="alum-form-textarea"
-                            placeholder="Share your experience and achievements after graduation"></textarea>
+                      <label for="alum-thoughts" class="alum-form-label">Your Thoughts</label>
+                      <textarea name="message" id="alum-thoughts" class="alum-form-textarea" placeholder="Share your experience and achievements after graduation"></textarea>
                     </div>
-
+                  
                     <div class="alum-form-group full-width">
-                        <label class="alum-form-label">Profile Picture</label>
-                        <div class="alum-form-file-wrapper">
-                            <i class="fas fa-camera alum-form-file-icon"></i>
-                            <span class="alum-form-file-label">Upload Your Photo</span>
-                            <span class="alum-form-file-sublabel">JPG, PNG or GIF (Max. 2MB)</span>
-                            <input type="file" class="alum-form-file" accept="image/*">
-                        </div>
+                      <label class="alum-form-label">Profile Picture</label>
+                      <div class="alum-form-file-wrapper">
+                        <i class="fas fa-camera alum-form-file-icon"></i>
+                        <span class="alum-form-file-label">Upload Your Photo</span>
+                        <input type="file" name="Profilepic" class="alum-form-file" accept="image/*" required>
+                      </div>
                     </div>
-
+                  
                     <button type="submit" class="alum-form-submit gap-3">Submit Your Thoughts</button>
-                </form>
+                  </form>
+                  
             </div>
         </div>
         <div class="alumni-header">
@@ -720,75 +724,45 @@
         </div>
 
         <div class="alumni-cards">
-
-            <div class="alumni-card rounded">
+            <% alumini.forEach(alum => { %>
+              <div class="alumni-card rounded">
                 <div class="alumni-image-container">
-                    <img src="/img/about/abt-1.jpg" alt="Sarah Johnson" class="alumni-image">
-                    <div class="alumni-image-overlay"></div>
+                  <img src="<%= alum.profilePic %>" alt="<%= alum.name %>" class="alumni-image">
+                  <div class="alumni-image-overlay"></div>
                 </div>
                 <div class="alumni-content">
-                    <h3 class="alumni-name">Sarah </h3>
-                    <p class="alumni-designation"><i class="fas fa-briefcase"></i> NEET</p>
-                    <p class="alumni-quote">The education I received gave me both the technical skills and leadership
-                        qualities needed to thrive in the tech industry. The alumni network has been invaluable
-                        throughout my career.</p>
-                    <div class="alumni-footer">
-                        <span class="alumni-batch"><i class="fas fa-graduation-cap"></i> Class of 2020</span>
-
-
-                        <span class="alumni-date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
-
-                    </div>
+                  <h3 class="alumni-name"><%= alum.name %></h3>
+                  <p class="alumni-designation">
+                    <i class="fas fa-briefcase"></i> <%= alum.currentPosition %>
+                  </p>
+                  <p class="alumni-quote"><%= alum.message %></p>
+                  <div class="alumni-footer">
+                    <span class="alumni-batch">
+                      <i class="fas fa-graduation-cap"></i> Class of <%= alum.batch %>
+                    </span>
+                    <span class="alumni-date">
+                      <i class="far fa-calendar-alt"></i>
+                      <%= alum.date.toDateString() %> <!-- Format as needed -->
+                    </span>
+                  </div>
                 </div>
-            </div>
-
-
-            <div class="alumni-card rounded">
-                <div class="alumni-image-container">
-                    <img src="/img/about/abt-1.jpg" alt="Sarah Johnson" class="alumni-image">
-                    <div class="alumni-image-overlay"></div>
-                </div>
-                <div class="alumni-content">
-                    <h3 class="alumni-name">Sarah Johnson</h3>
-                    <p class="alumni-designation"><i class="fas fa-briefcase"></i> Senior Product Manager at
-                        TechSolutions</p>
-                    <p class="alumni-quote">The education I received gave me both the technical skills and leadership
-                        qualities needed to thrive in the tech industry. The alumni network has been invaluable
-                        throughout my career.</p>
-                    <div class="alumni-footer">
-                        <span class="alumni-batch"><i class="fas fa-graduation-cap"></i> Class of 2020</span>
-
-
-                        <span class="alumni-date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="alumni-card rounded">
-                <div class="alumni-image-container">
-                    <img src="/img/about/abt-1.jpg" alt="Sarah Johnson" class="alumni-image">
-                    <div class="alumni-image-overlay"></div>
-                </div>
-                <div class="alumni-content">
-                    <h3 class="alumni-name">Sarah </h3>
-                    <p class="alumni-designation"><i class="fas fa-briefcase"></i> KEAM</p>
-                    <p class="alumni-quote">The education I received gave me both the technical skills and leadership
-                        qualities needed to thrive in the tech industry. The alumni network has been invaluable
-                        throughout my career.</p>
-                    <div class="alumni-footer">
-                        <span class="alumni-batch"><i class="fas fa-graduation-cap"></i> Class of 2020</span>
-
-
-                        <span class="alumni-date"><i class="far fa-calendar-alt"></i> June 15, 2023</span>
-
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
+              </div>
+            <% }); %>
+          </div>
+          <div class="pagination">
+            <% if (currentPage > 1) { %>
+              <a href="/alumini?page=<%= currentPage - 1 %>">&laquo; Previous</a>
+            <% } %>
+          
+            <% for (let i = 1; i <= totalPages; i++) { %>
+              <a href="/alumini?page=<%= i %>" class="<%= i === currentPage ? 'active' : '' %>"><%= i %></a>
+            <% } %>
+          
+            <% if (currentPage < totalPages) { %>
+              <a href="/alumini?page=<%= currentPage + 1 %>">Next &raquo;</a>
+            <% } %>
+          </div>
+          
     </div>
 
     <footer class="footer-wrapper footer-layout1" data-bg-src="/img/bg/footer-bg-1-1.png">
@@ -938,51 +912,68 @@
             const closeFormBtn = document.getElementById('closeFormModal');
             const formModal = document.getElementById('formModal');
             const formContainer = document.querySelector('.alum-form-container');
-
+            const alumForm = document.getElementById('alumForm');
+        
             // Open modal
-            openFormBtn.addEventListener('click', function () {
+            openFormBtn.addEventListener('click', () => {
                 formModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                document.body.style.overflow = 'hidden';
             });
-
-            // Close modal when clicking the close button
-            closeFormBtn.addEventListener('click', function () {
+        
+            // Close modal
+            closeFormBtn.addEventListener('click', () => {
                 formModal.classList.remove('active');
-                document.body.style.overflow = ''; // Re-enable scrolling
+                document.body.style.overflow = '';
             });
-
-            // Close modal when clicking outside the form
-            formModal.addEventListener('click', function (e) {
+        
+            // Click outside modal to close
+            formModal.addEventListener('click', (e) => {
                 if (e.target === formModal) {
                     formModal.classList.remove('active');
-                    document.body.style.overflow = ''; // Re-enable scrolling
+                    document.body.style.overflow = '';
                 }
             });
-
-            // Prevent form container clicks from closing the modal
-            formContainer.addEventListener('click', function (e) {
-                e.stopPropagation();
-            });
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function (e) {
+        
+            // Prevent click inside container from closing modal
+            formContainer.addEventListener('click', (e) => e.stopPropagation());
+        
+            // Escape key to close modal
+            document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && formModal.classList.contains('active')) {
                     formModal.classList.remove('active');
-                    document.body.style.overflow = ''; // Re-enable scrolling
+                    document.body.style.overflow = '';
                 }
             });
-
-            // Form submission handling (prevent default for demo)
-            const alumForm = document.querySelector('.alum-form');
-            alumForm.addEventListener('submit', function (e) {
+        
+            // AJAX form submit
+            alumForm.addEventListener('submit', async function (e) {
                 e.preventDefault();
-                // Form processing would go here
-                alert('Thank you for your submission! We will be in touch soon.');
-                formModal.classList.remove('active');
-                document.body.style.overflow = ''; // Re-enable scrolling
+        
+                const formData = new FormData(alumForm);
+        
+                try {
+                    const response = await fetch('/alumini', {
+                        method: 'POST',
+                        body: formData
+                    });
+        
+                    if (response.ok) {
+                        const result = await response.json();
+                        alert("🎉 Thank you for your submission!");
+                        alumForm.reset();
+                        formModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    } else {
+                        alert("❌ Something went wrong. Please try again.");
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("❌ Submission failed. Please check your internet or contact support.");
+                }
             });
         });
-    </script>
+        </script>
+        
     <!-- Jquery -->
     <script src="/js/vendor/jquery-3.6.0.min.js"></script>
     <!-- Slick Slider -->
