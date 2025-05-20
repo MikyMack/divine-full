@@ -75,7 +75,8 @@ router.get('/events', async (req, res) => {
 
 router.get('/notices', async (req, res) => {
     try {
-        res.render('notice', { title: 'Notices'});
+        const notices =await Notice.find({ isActive: true }).sort({ createdAt: -1 });
+        res.render('notice', { title: 'Notices',notices});
     } catch (error) {
         console.error(error);
         res.status(500).send('Error loading notice page data');

@@ -208,9 +208,9 @@
                     <div class="col-sm-6 col-lg-4 filter-item">
                         <div class="gallery-style1 layout2">
                             <div class="gallery-img">
-                                <img src="<%= item.image %>" alt="gallery"
+                                <img src="<%= item.image %>" loading="lazy" alt="gallery"
                                     style="width: 420px; height: 300px; object-fit: cover;">
-                                <a href="<%= item.image %>" class="gallery-btn popup-image">
+                                <a href="<%= item.image %>"  class="gallery-btn popup-image">
                                     <i class="fal fa-plus"></i>
                                 </a>
                             </div>
@@ -257,7 +257,7 @@
                         <div>
                             <div class="img-box7">
                                 <div class="img-1 mega-hover">
-                                    <img class="glr-video" src="<%= item.image %>" alt="Video Thumbnail">
+                                    <img class="glr-video" src="<%= item.image %>" loading="lazy" alt="Video Thumbnail">
                                     <a href="<%= item.youtubeLink %>" class="play-btn popup-video position-center">
                                         <i class="fas fa-play"></i>
                                     </a>
@@ -275,7 +275,7 @@
                     <% if (item.youtubeLink) { %>
                         <div class="col-auto">
                             <div class="thumb-style1">
-                                <img src="<%= item.image %>" alt="Video Thumbnail" style="width: 200px; height: 200px; object-fit: cover;">
+                                <img src="<%= item.image %>" loading="lazy" alt="Video Thumbnail" style="width: 200px; height: 200px; object-fit: cover;">
                             </div>
                         </div>
                         <% } %>

@@ -4387,6 +4387,9 @@ a.text-theme:hover,
 .chairman-text{
   font-size: 13px!important;
 }
+.chair-title{
+ font-size: 40px;
+}
   
 @media (max-width: 575px) {
   .copyright-wrap-five {
@@ -17169,6 +17172,12 @@ span.select2-selection.select2-selection--single:focus {
   .form-style3.layout3 .form-img {
     right: 0;
   }
+  .form-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 767px) {
@@ -19767,7 +19776,7 @@ textarea.pm-form-control {
   height: 380px!important;
   object-fit: cover;
 }
-@media(max-width:500px){
+@media(max-width:900px){
   .abt-img,.abt-img-2{
     width: 100%!important;
     height: 300px!important;
@@ -19844,3 +19853,12 @@ textarea.pm-form-control {
      .btn-active{
       color: var(--primary-orange)!important;
      }
+
+     @media (max-width: 991px) {
+
+      .copyright-text{
+        margin-bottom: 5rem!important;
+        font-size: 12px!important;
+    
+      }
+    }
