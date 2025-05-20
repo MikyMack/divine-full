@@ -1052,6 +1052,7 @@ textarea.is-invalid {
   bottom: 0;
   z-index: 999;
   background-color: var(--body-bg);
+  z-index: 99999;
 }
 
 .preloader .vs-btn {
