@@ -772,19 +772,19 @@
     ==============================-->
 
 
-
+   <section>
     <div class="prlx_slider_container">
         <% if (banners.length> 0) { %>
             <% banners.forEach((banner, index)=> { %>
                 <div class="prlx_slide <%= index === 0 ? 'prlx_active' : '' %>">
-                    <div class="prlx_slide_background" style="background-image: url('<%= banner.image %>');"></div>
+                    <div class="prlx_slide_background" style="background-image: url('<%= banner.image %>');" ></div>
                 </div>
                 <% }) %>
                     <% } else { %>
                         <!-- Default Slide -->
                         <div class="prlx_slide prlx_active">
                             <div class="prlx_slide_background"
-                                style="background-image: url('/img/default-banner.jpg');"></div>
+                                style="background-image: url('/img/default-banner.jpg'); object-fit: contain;"></div>
                         </div>
                         <% } %>
 
@@ -804,9 +804,11 @@
                             <div class="prlx_arrow prlx_arrow_prev"></div>
                             <div class="prlx_arrow prlx_arrow_next"></div>
     </div>
+   </section>
+    
 
 
-    <div class="container">
+    <div class="container" style="margin-top: 50px;">
         <div class="about-area7">
             <div class="row">
                 <div class="col-lg-6 mb-30">
