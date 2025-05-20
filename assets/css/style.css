@@ -4110,6 +4110,8 @@ a.text-theme:hover,
   .header-layout2 .menu-area {
     padding: 0 25px 0 9px;
   }
+
+
 }
 
 /* Extra small devices */
@@ -4141,6 +4143,7 @@ a.text-theme:hover,
     border: none;
     vertical-align: top;
   }
+ 
 }
 
 /*------------------- 4.3. Footer  -------------------*/
@@ -4151,8 +4154,9 @@ a.text-theme:hover,
 
 .copyright-wrap {
   text-align: center;
-  padding: 29px 0;
+  padding: px 0;
   background-color: var(--theme-color2);
+  
 }
 
 .copyright-text {
@@ -4374,8 +4378,16 @@ a.text-theme:hover,
     flex-wrap: wrap;
     justify-content: center;
   }
-}
+  .copyright-text{
+    margin-bottom: 5rem!important;
+    font-size: 12px!important;
 
+  }
+}
+.chairman-text{
+  font-size: 13px!important;
+}
+  
 @media (max-width: 575px) {
   .copyright-wrap-five {
     justify-content: left;
@@ -17380,6 +17392,7 @@ span.select2-selection.select2-selection--single:focus {
   align-items: center;
   box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+ 
 }
 
 .nav-item {
