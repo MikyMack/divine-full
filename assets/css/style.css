@@ -41,6 +41,7 @@
 html,
 body {
   scroll-behavior: auto !important;
+  overflow-x: hidden;
 }
 
 body {
@@ -17526,7 +17527,24 @@ span.select2-selection.select2-selection--single:focus {
   transform-origin: right bottom;
   background-color: var(--vs-secondary-color);
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.admission-btn {
+  position: fixed;
+  right: 0;
+  top: 20%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: right bottom;
+  background-color: var(--vs-secondary-color);
+  color: white;
+  padding: 5px 10px;
   border: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -17721,7 +17739,7 @@ span.select2-selection.select2-selection--single:focus {
 
 @media (max-width: 968px) {
   .prlx_slider_container {
-    height: 32vw;
+    height: 50vh;
     width: 100% !important;
     padding: 0 !important;
     margin-top: 1rem;
@@ -17764,9 +17782,9 @@ span.select2-selection.select2-selection--single:focus {
   }
 
   .prlx_slide_background {
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    background-size: contain; /* fills fully */
+    background-size: contain; 
     background-position: center;
     background-repeat: no-repeat;
   }

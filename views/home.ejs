@@ -199,7 +199,7 @@
                 <h1 style="font-size:70px; stroke:#000; stroke-width:0px; text-align:left; font-style:normal; text-decoration:none; text-transform:none; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; color:#ffffff; font-family:'Fredoka', sans-serif; line-height:70px; font-weight:600; left:310px; top:445px; -webkit-background-clip:border-box;"
                     class="ls-l ls-hide-tablet ls-hide-phone ls-text-layer"
                     data-ls="offsetxin:-100; delayin:600; easingin:easeOutQuint;">
-                    School,Puthoor, Kollam
+                    School
                 </h1>
                 <p style="font-size:24px; stroke:#000; stroke-width:0px; text-align:left; font-style:normal; text-decoration:none; text-transform:none; font-weight:400; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; font-family:'Jost', sans-serif;; color:#ffffff; left:315px; top:535px; -webkit-background-clip:border-box;"
                     class="ls-l ls-hide-tablet ls-hide-phone ls-text-layer"
@@ -226,7 +226,7 @@
                 <h1 style="font-size:90px; stroke:#000; stroke-width:0px; text-align:left; font-style:normal; text-decoration:none; text-transform:none; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; color:#ffffff; font-family:'Fredoka', sans-serif; line-height:90px; font-weight:600; left:150px; top:351px; -webkit-background-clip:border-box;"
                     class="ls-l ls-hide-desktop ls-hide-phone ls-text-layer"
                     data-ls="offsetxin:-100; delayin:600; easingin:easeOutQuint;">
-                    School,Puthoor, Kollam
+                    School
                 </h1>
                 <p style="font-size:34px; stroke:#000; stroke-width:0px; text-align:left; font-style:normal; text-decoration:none; text-transform:none; font-weight:400; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; font-family:'Jost', sans-serif;; color:#ffffff; left:150px; top:477px; -webkit-background-clip:border-box;"
                     class="ls-l ls-hide-desktop ls-hide-phone ls-text-layer"
@@ -253,7 +253,7 @@
                 <h1 style="font-size:110px; stroke:#000; stroke-width:0px; text-align:left; font-style:normal; text-decoration:none; text-transform:none; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; color:#ffffff; font-family:'Fredoka', sans-serif; line-height:110px; font-weight:600; left:100px; top:380px; -webkit-background-clip:border-box;"
                     class="ls-l ls-hide-desktop ls-hide-tablet ls-text-layer"
                     data-ls="offsetxin:-100; delayin:600; easingin:easeOutQuint;">
-                    School,Puthoor, Kollam
+                    School
                 </h1>
                 <div style="font-size:30px; color:#000; stroke:#000; stroke-width:0px; font-style:normal; text-decoration:none; text-transform:none; font-weight:400; letter-spacing:0px; background-position:0% 0%; background-repeat:no-repeat; background-clip:border-box; overflow:visible; left:100px; top:578px; font-family:'Fredoka', sans-serif; -webkit-background-clip:border-box;"
                     class="ls-l ls-hide-desktop ls-hide-tablet ls-html-layer"
@@ -574,7 +574,7 @@
     <section class="py-10">
         <div class="container">
             <div class="title-area text-center mb-4">
-                <div class="sec-bubble mb-2">
+                <div class="sec-bubble mb-2 mt-4">
                     <div class="bubble"></div>
                     <div class="bubble"></div>
                     <div class="bubble"></div>
@@ -729,7 +729,7 @@
                         </div>
                         <h3 class="feature-title h5"><a href="/academics" class="text-inherit">Inquiry-Based
                                 and <br> Project-Based Learning</a></h3>
-                       
+
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-3">
@@ -749,9 +749,9 @@
                             <div class="vs-circle"></div>
                             <img src="/img/choose/choose-1-3.png" alt="image" loading="lazy">
                         </div>
-                        <h3 class="feature-title h5"><a href="/academics"
-                                class="text-inherit">Cross-Curricular <br> Integration</a></h3>
-                       
+                        <h3 class="feature-title h5"><a href="/academics" class="text-inherit">Cross-Curricular <br>
+                                Integration</a></h3>
+
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-3">
@@ -762,7 +762,7 @@
                         </div>
                         <h3 class="feature-title h5"><a href="/academics" class="text-inherit"> Flipped
                                 Classrooms and <br> Blended Learning</a></h3>
-                      
+
                     </div>
                 </div>
             </div>
@@ -772,40 +772,28 @@
     ==============================-->
 
 
-   <section>
-    <div class="prlx_slider_container">
-        <% if (banners.length> 0) { %>
-            <% banners.forEach((banner, index)=> { %>
-                <div class="prlx_slide <%= index === 0 ? 'prlx_active' : '' %>">
-                    <div class="prlx_slide_background" style="background-image: url('<%= banner.image %>');" ></div>
-                </div>
-                <% }) %>
-                    <% } else { %>
-                        <!-- Default Slide -->
-                        <div class="prlx_slide prlx_active">
-                            <div class="prlx_slide_background"
-                                style="background-image: url('/img/default-banner.jpg'); object-fit: contain;"></div>
-                        </div>
-                        <% } %>
-
-                            <!-- Navigation Dots -->
-                            <div class="prlx_nav_buttons">
-                                <% if (banners.length> 0) { %>
-                                    <% banners.forEach((_, index)=> { %>
-                                        <div class="prlx_nav_dot <%= index === 0 ? 'prlx_active' : '' %>"
-                                            data-index="<%= index %>"></div>
-                                        <% }) %>
-                                            <% } else { %>
-                                                <div class="prlx_nav_dot prlx_active" data-index="0"></div>
-                                                <% } %>
+    <section>
+        <div class="prlx_slider_container">
+            <% if (banners.length> 0) { %>
+                <% banners.forEach((banner, index)=> { %>
+                    <div class="prlx_slide <%= index === 0 ? 'prlx_active' : '' %>">
+                        <div class="prlx_slide_background" style="background-image: url('<%= banner.image %>');"></div>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <!-- Default Slide -->
+                            <div class="prlx_slide prlx_active">
+                                <div class="prlx_slide_background"
+                                    style="background-image: url('/img/default-banner.jpg'); object-fit: contain;">
+                                </div>
                             </div>
+                            <% } %>
+                                <!-- Arrow Controls -->
+                                <div class="prlx_arrow prlx_arrow_prev"></div>
+                                <div class="prlx_arrow prlx_arrow_next"></div>
+        </div>
+    </section>
 
-                            <!-- Arrow Controls -->
-                            <div class="prlx_arrow prlx_arrow_prev"></div>
-                            <div class="prlx_arrow prlx_arrow_next"></div>
-    </div>
-   </section>
-    
 
 
     <div class="container" style="margin-top: 50px;">
@@ -920,10 +908,10 @@
                         <div class="team-content">
                             <h3 class="team-name h2">
                                 <a href="#" class="text-inherit chair-title">
-                                  <span style="white-space: nowrap;">Dr Wales</span><br>Mathew
+                                    <span style="white-space: nowrap;">Dr Wales</span><br>Mathew
                                 </a>
-                              </h3>
-                              
+                            </h3>
+
                             <p class="team-degi">Chairman & Managing Director</p>
                             <a href="tel:+919895361126" class="team-number">+91 98953 61126</a>
                             <div class="vs-social">
@@ -938,17 +926,27 @@
                 <div class="col-lg-5 col-xl-7 pb-1">
                     <div class="message-from-principal p-4" style="background-color: #ffffff; border-radius: 10px;">
                         <h3 class="h4 mb-3">Message from the Chairman
-</h3>
+                        </h3>
                         <p class="chairman-text">
-                            " Divine Public School
-Since its inception in 2000 under the aegis of the Educational Charitable Society, Divine Public School has been steadfast in its mission to deliver an education that is both transformative and enduring. Our commitment transcends traditional academics — we strive to cultivate intellectual curiosity, moral integrity, and social responsibility in every student.
-In today’s rapidly evolving world, education must prepare learners not only to succeed academically but also to navigate life’s complexities with resilience, empathy, and critical thinking. At Divine, we have created a nurturing environment that blends innovative teaching methodologies, cutting-edge technology, and timeless values to empower our students to become visionary leaders and conscientious global citizens.
-This journey is made possible by the unwavering dedication of our talented faculty, the trust of our supportive parents, and the enthusiasm of our vibrant student community. Together, we foster a culture of excellence, inclusivity, and continuous growth.
-I invite you to explore our school’s ethos and join us in shaping the future — one student at a time.
+                            "
+                            Since its inception in 2000 under the aegis of the Educational Charitable Society, Divine
+                            Public School has been steadfast in its mission to deliver an education that is both
+                            transformative and enduring. Our commitment transcends traditional academics — we strive to
+                            cultivate intellectual curiosity, moral integrity, and social responsibility in every
+                            student.
+                            In today’s rapidly evolving world, education must prepare learners not only to succeed
+                            academically but also to navigate life’s complexities with resilience, empathy, and critical
+                            thinking. At Divine, we have created a nurturing environment that blends innovative teaching
+                            methodologies, cutting-edge technology, and timeless values to empower our students to
+                            become visionary leaders and conscientious global citizens.
+                            This journey is made possible by the unwavering dedication of our talented faculty, the
+                            trust of our supportive parents, and the enthusiasm of our vibrant student community.
+                            Together, we foster a culture of excellence, inclusivity, and continuous growth.
+                            I invite you to explore our school’s ethos and join us in shaping the future — one student
+                            at a time.
 
                         </p>
-                        <p class="mb-0"><strong> Warm regards,<br> Dr Wales Mathew Chairman
-Divine Public School, Puthoor – Kollam </strong></p>
+                        <p class="mb-0"><strong> Warm regards,<br> Dr Wales Mathew</strong></p>
                     </div>
                 </div>
             </div>
@@ -1495,7 +1493,7 @@ Divine Public School, Puthoor – Kollam </strong></p>
                         </div>
                     </div>
                     <div class="col-lg-auto copyright">
-                        <p  class="copyright-text text-white ">Copyright &copy; 2025 <a href="/">Divine Public
+                        <p class="copyright-text text-white ">Copyright &copy; 2025 <a href="/">Divine Public
                                 School</a>. All
                             Rights Reserved By <a href="">Trivlogic Private Limited</a></p>
                     </div>
@@ -1508,6 +1506,611 @@ Divine Public School, Puthoor – Kollam </strong></p>
 
     <!-- Enquiry Button -->
     <a href="/contact"> <button class="enquiry-btn ">Enquiry</button></a>
+    <button class="admission-btn" id="openAdmissionPopup">Admission</button>
+    <div id="admissionPopup" class="popup-overlay" style="display:none;">
+        <div class="popup-content">
+            <button id="closePopup" class="close-btn">×</button>
+
+            <div class="form-header">
+                <span class="emoji-icon">🎓</span>
+                <h4>New Admissions for 2025 - 2026!</h4>
+                <p class="form-subtitle">Fill out the form below to begin the admission process</p>
+            </div>
+
+            <form onsubmit="sendAdmissionToWhatsApp(event)">
+                <div class="form-section">
+                    <h3 class="section-title">Parent Information</h3>
+                    <div class="form-group">
+                        <label>Parent/Guardian Name <span class="required">*</span></label>
+                        <input type="text" id="name" required placeholder="Your full name" />
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" id="email" required placeholder="your.email@example.com" />
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Contact Number <span class="required">*</span></label>
+                            <input type="tel" id="contact" required placeholder="+91 9876543210" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title">Student Information</h3>
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label>Child's Name <span class="required">*</span></label>
+                            <input type="text" id="childName" required placeholder="Child's full name" />
+                        </div>
+                        <div class="form-group half-width">
+                            <label>Child's Age <span class="required">*</span></label>
+                            <input type="number" id="age" required placeholder="Age in years" min="3" max="18" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Class to Join <span class="required">*</span></label>
+                        <select id="class" required>
+                            <option value="">Select class</option>
+                            <option value="Nursery">Nursery</option>
+                            <option value="LKG">LKG</option>
+                            <option value="UKG">UKG</option>
+                            <option value="I">1st </option>
+                            <option value="II">2nd </option>
+                            <option value="III">3rd</option>
+                            <option value="IV">4th</option>
+                            <option value="V">5th</option>
+                            <option value="VI">6th</option>
+                            <option value="VII">7th</option>
+                            <option value="VIII">8th</option>
+                            <option value="IX">9th</option>
+                            <option value="X">10th</option>
+
+
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last School Attended</label>
+                        <input type="text" id="lastSchool" placeholder="School name, city, state" />
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3 class="section-title">Academic Background</h3>
+                    <div class="form-group">
+                        <label>Board of Examination <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="board" value="CBSE" required />
+                                CBSE</label>
+                            <label class="radio-option"><input type="radio" name="board" value="ICSE" /> ICSE</label>
+                            <label class="radio-option"><input type="radio" name="board" value="State Board" /> State
+                                Board</label>
+                            <label class="radio-option"><input type="radio" name="board" value="Others" />
+                                Others</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Class Passed <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-option"><input type="radio" name="lastClass" value="X" /> X (for Class
+                                XI)</label>
+                            <label class="radio-option"><input type="radio" name="lastClass" value="XI" /> XI (for Class
+                                XII)</label>
+                            <label class="radio-option"><input type="radio" name="lastClass" value="Below X" /> Below
+                                X</label>
+                        </div>
+                    </div>
+
+                    <div id="streamFields" style="display:none;">
+                        <div class="form-group">
+                            <label>Stream Chosen <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="stream" value="Science" />
+                                    Science</label>
+                                <label class="radio-option"><input type="radio" name="stream" value="Commerce" />
+                                    Commerce</label>
+                                <label class="radio-option"><input type="radio" name="stream" value="Humanities" />
+                                    Humanities</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Class Applied for <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <label class="radio-option"><input type="radio" name="classApplied" value="XI" />
+                                    XI</label>
+                                <label class="radio-option"><input type="radio" name="classApplied" value="XII" />
+                                    XII</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-icon">📩</span> Submit Application
+                    </button>
+                    <p class="form-note">We'll contact you within 24 hours to complete the admission process</p>
+                </div>
+            </form>
+
+            <div class="pdf-download-section">
+                <p>Prefer to apply offline?</p>
+                <a download href="/img/pdf/admission-form.pdf">
+                    <button id="downloadPdf" class="download-btn">
+                        📄 Download Registration Form PDF
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f8fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 15px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            box-sizing: border-box;
+            max-height: 95vh;
+            overflow-y: auto;
+            animation: popIn 0.5s ease-out forwards;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Header Styles */
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .emoji-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        .form-subtitle {
+            color: #666;
+            margin-top: 5px;
+            font-size: 0.95rem;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Form Section Styles */
+        .form-section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            color: #4a54ca;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        /* Form Group Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        .required {
+            color: #ff6b6b;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e1e5e8;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            background-color: #f9fafc;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #6c63ff;
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+            background-color: #fff;
+        }
+
+        /* Form Row Layout */
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .half-width {
+            flex: 1;
+        }
+
+        /* Radio Button Styles */
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: #f5f5ff;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .radio-option:hover {
+            background: #e8e8ff;
+        }
+
+        .radio-option input {
+            margin-right: 8px;
+        }
+
+        .radio-option.selected {
+            background-color: #6c63ff;
+            /* highlight color */
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 0 8px rgba(108, 99, 255, 0.6);
+        }
+
+        /* Button Styles */
+        .submit-btn {
+            background: linear-gradient(to right, #6c63ff, #9795f0);
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(108, 99, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-icon {
+            font-size: 1.2rem;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        /* PDF Download Section */
+        .pdf-download-section {
+            margin-top: 25px;
+            text-align: center;
+            padding-top: 15px;
+            border-top: 1px dashed #e0e0e0;
+        }
+
+        .pdf-download-section p {
+            margin: 0 0 10px 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .download-btn {
+            background: white;
+            color: #4a54ca;
+            border: 2px solid #6c63ff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #f5f5ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(108, 99, 255, 0.15);
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f1f1f5;
+            color: #666;
+            border: none;
+            font-size: 18px;
+            width: 32px;
+            height: 32px;
+            line-height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .close-btn:hover {
+            background: #e8e8ee;
+            color: #333;
+        }
+
+        /* Responsive Tweaks */
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .half-width {
+                width: 100%;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .popup-content {
+                max-height: 90vh;
+                padding: 20px;
+            }
+
+            .emoji-icon {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .popup-content {
+                padding: 20px 15px;
+            }
+
+            .popup-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .submit-btn {
+                padding: 12px;
+            }
+
+            .form-group input {
+                padding: 10px 12px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+    <script>
+        document.querySelectorAll('.radio-group').forEach(radioGroup => {
+            const radios = radioGroup.querySelectorAll('input[type="radio"]');
+
+            radios.forEach(radio => {
+                radio.addEventListener('change', () => {
+                    // Remove 'selected' from all labels in this group
+                    radios.forEach(r => r.parentElement.classList.remove('selected'));
+                    // Add 'selected' to the checked radio's label
+                    if (radio.checked) {
+                        radio.parentElement.classList.add('selected');
+                    }
+                });
+
+                // Trigger initial state on page load if any radio is checked
+                if (radio.checked) {
+                    radio.parentElement.classList.add('selected');
+                }
+            });
+        });
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Show/hide stream fields based on last class selection
+            const lastClassRadios = document.getElementsByName("lastClass");
+            const streamFields = document.getElementById("streamFields");
+
+            lastClassRadios.forEach(radio => {
+                radio.addEventListener("change", () => {
+                    if (radio.value === "X" || radio.value === "XI") {
+                        streamFields.style.display = "block";
+                    } else {
+                        streamFields.style.display = "none";
+                        // Clear stream selection when hidden
+                        document.querySelectorAll('input[name="stream"]').forEach(el => el.checked = false);
+                        document.querySelectorAll('input[name="classApplied"]').forEach(el => el.checked = false);
+                    }
+                });
+            });
+
+            // Popup functionality
+            const popup = document.getElementById('admissionPopup');
+            const openBtn = document.getElementById('openAdmissionPopup');
+            const closeBtn = document.getElementById('closePopup');
+            const popupContent = document.querySelector('.popup-content');
+
+            openBtn.addEventListener('click', () => {
+                popup.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+
+            closeBtn.addEventListener('click', () => {
+                popup.style.display = 'none';
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+
+            popupContent.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+
+        function sendAdmissionToWhatsApp(event) {
+            event.preventDefault();
+
+            // Parent Information
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+
+            // Student Information
+            const childName = document.getElementById('childName').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const classToJoin = document.getElementById('class').value.trim();
+            const lastSchool = document.getElementById('lastSchool').value.trim();
+
+            // Academic Background
+            const board = document.querySelector('input[name="board"]:checked')?.value || 'Not specified';
+            const lastClass = document.querySelector('input[name="lastClass"]:checked')?.value || 'Not specified';
+
+            // Stream Information (if applicable)
+            let stream = '';
+            let classApplied = '';
+            if (document.getElementById('streamFields').style.display === 'block') {
+                stream = document.querySelector('input[name="stream"]:checked')?.value || 'Not specified';
+                classApplied = document.querySelector('input[name="classApplied"]:checked')?.value || 'Not specified';
+            }
+
+            // Construct WhatsApp message
+            let message = `📚 *New Admission Request* 📚%0A%0A` +
+                 `*👤 Parent Information*%0A` +
+                 `Name: ${encodeURIComponent(name)}%0A` +
+                 `Email: ${encodeURIComponent(email)}%0A` +
+                 `Contact: ${encodeURIComponent(contact)}%0A%0A` +
+                 `*👶 Student Information*%0A` +
+                 `Name: ${encodeURIComponent(childName)}%0A` +
+                 `Age: ${encodeURIComponent(age)}%0A` +
+                 `Class to Join: ${encodeURIComponent(classToJoin)}%0A` +
+                 `Last School: ${encodeURIComponent(lastSchool || 'N/A')}%0A%0A` +
+                 `*📝 Academic Background*%0A` +
+                 `Board: ${encodeURIComponent(board)}%0A` +
+                 `Last Class: ${encodeURIComponent(lastClass)}`;
+
+            // Add stream info if applicable
+            if (stream && classApplied) {
+                message += `%0AStream: ${encodeURIComponent(stream)}` +
+                    `%0AClass Applied: ${encodeURIComponent(classApplied)}`;
+            }
+
+            // Replace with your WhatsApp number (with country code)
+            const whatsappNumber = "919895361126";
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, "_blank");
+
+            // Close popup and reset form
+            document.getElementById('admissionPopup').style.display = 'none';
+            document.body.style.overflow = '';
+            event.target.reset();
+
+            // Optional: Show confirmation message
+            alert("Thank you! Your admission request has been submitted. We'll contact you shortly.");
+        }
+
+    </script>
+
+
     <div class="floating-buttons">
         <a href="mailto:admin@divinepublicschool.com" class="email-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -1577,431 +2180,6 @@ Divine Public School, Puthoor – Kollam </strong></p>
         </a>
 
     </nav>
-    <div id="admissionPopup" class="popup-overlay">
-        <div class="popup-content">
-            <button id="closePopup" class="close-btn">×</button>
-
-            <div class="form-header">
-                <span class="emoji-icon">🎓</span>
-                <h2>New Admissions for 2025 - 2026!</h2>
-            </div>
-
-            <form onsubmit="sendAdmissionToWhatsApp(event)">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" id="name" required placeholder="Your full name">
-                </div>
-
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="email" required placeholder="your.email@example.com">
-                </div>
-
-                <div class="form-group">
-                    <label>Contact Number</label>
-                    <input type="tel" id="contact" required placeholder="Your phone number">
-                </div>
-
-                <div class="form-group">
-                    <label>Child's Name</label>
-                    <input type="text" id="childName" required placeholder="Child's full name">
-                </div>
-
-                <div class="form-group">
-                    <label>Child's Age</label>
-                    <input type="number" id="age" required placeholder="Age in years">
-                </div>
-
-                <div class="form-group">
-                    <label>Class to Join</label>
-                    <input type="text" id="class" required placeholder="e.g. Nursery, LKG, UKG, 1st...">
-                </div>
-
-                <button type="submit" class="submit-btn">Apply Now</button>
-            </form>
-
-            <div class="pdf-download-section">
-                <p>Prefer to apply offline?</p>
-                <a download href="/img/pdf/admission-form.pdf"> <button id="downloadPdf" class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
-                        </svg>
-                        Download Registration Form PDF
-                    </button></a>
-            </div>
-
-            <div class="decorative-icon icon-1">📚</div>
-            <div class="decorative-icon icon-2">✏️</div>
-        </div>
-    </div>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f5f8fa;
-            margin: 0;
-            padding: 0;
-        }
-
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            padding: 15px;
-            box-sizing: border-box;
-            overflow: auto;
-        }
-
-        .popup-content {
-            background: #fff;
-            padding: 30px;
-            border-radius: 16px;
-            width: 100%;
-            max-width: 500px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            position: relative;
-            box-sizing: border-box;
-            max-height: 95vh;
-            overflow-y: auto;
-            animation: popIn 0.5s ease-out forwards;
-        }
-
-        @keyframes popIn {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        /* Scrollbar Styling */
-        .popup-content::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .popup-content::-webkit-scrollbar-thumb {
-            background-color: #6c63ff;
-            border-radius: 4px;
-        }
-
-        .popup-content h2 {
-            margin-bottom: 25px;
-            font-size: 1.5rem;
-            color: #333;
-            text-align: center;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .popup-content h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(to right, #6c63ff, #9795f0);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #555;
-            font-size: 0.9rem;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #e1e5e8;
-            border-radius: 8px;
-            font-size: 1rem;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-            background-color: #f9fafc;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #6c63ff;
-            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
-            background-color: #fff;
-        }
-
-        .submit-btn {
-            background: linear-gradient(to right, #6c63ff, #9795f0);
-            color: white;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            width: 100%;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-            box-shadow: 0 4px 8px rgba(108, 99, 255, 0.2);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(108, 99, 255, 0.3);
-        }
-
-        .pdf-download-section {
-            margin-top: 25px;
-            text-align: center;
-            padding-top: 15px;
-            border-top: 1px dashed #e0e0e0;
-        }
-
-        .pdf-download-section p {
-            margin: 0 0 10px 0;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .download-btn {
-            background: white;
-            color: #4a54ca;
-            border: 2px solid #6c63ff;
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: 0 auto;
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: #f5f5ff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(108, 99, 255, 0.15);
-        }
-
-        .download-btn svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #f1f1f5;
-            color: #666;
-            border: none;
-            font-size: 18px;
-            width: 32px;
-            height: 32px;
-            line-height: 28px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .close-btn:hover {
-            background: #e8e8ee;
-            color: #333;
-        }
-
-        .decorative-icon {
-            position: absolute;
-            opacity: 0.04;
-            z-index: -1;
-        }
-
-        .icon-1 {
-            top: 20px;
-            left: 20px;
-            font-size: 80px;
-            transform: rotate(-15deg);
-        }
-
-        .icon-2 {
-            bottom: 20px;
-            right: 20px;
-            font-size: 100px;
-            transform: rotate(10deg);
-        }
-
-        /* Form Header */
-        .form-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .emoji-icon {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            display: inline-block;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Required marker */
-        .form-group label::after {
-            content: "*";
-            color: #ff6b6b;
-            margin-left: 4px;
-        }
-
-        /* Responsive Tweaks */
-        @media (max-height: 700px) {
-            .popup-content {
-                max-height: 90vh;
-                padding: 20px;
-            }
-
-            .emoji-icon {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .popup-content {
-                padding: 20px 15px;
-            }
-
-            .popup-content h2 {
-                font-size: 1.2rem;
-            }
-
-            .submit-btn {
-                padding: 12px;
-            }
-
-            .form-group input {
-                padding: 10px 12px;
-            }
-        }
-    </style>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const popup = document.getElementById('admissionPopup');
-        const popupContent = document.querySelector('.popup-content');
-        const closeBtn = document.getElementById('closePopup');
-        const now = new Date();
-        const storageKey = 'admissionPopupData';
-        
-        // Initialize or get stored data
-        let storedData;
-        try {
-            storedData = JSON.parse(localStorage.getItem(storageKey)) || {};
-        } catch (e) {
-            storedData = {};
-        }
-        
-        // Set defaults if missing
-        storedData.lastClosed = storedData.lastClosed || null;
-        storedData.lastShownDate = storedData.lastShownDate || null;
-        
-        // Check if it's a new day (after midnight)
-        const today = now.toLocaleDateString();
-        const isNewDay = storedData.lastShownDate !== today;
-        
-        // Only show if it's a new day or never shown before
-        if (isNewDay || !storedData.lastShownDate) {
-            popup.style.display = 'flex';
-            storedData.lastShownDate = today;
-            localStorage.setItem(storageKey, JSON.stringify(storedData));
-        }
-        
-        // Close button handler
-        closeBtn.addEventListener('click', () => {
-            closePopup();
-        });
-        
-        // Close when clicking outside the form
-        popup.addEventListener('click', (e) => {
-            if (e.target === popup) {
-                closePopup();
-            }
-        });
-        
-        // Prevent closing when clicking inside the form
-        popupContent.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-        
-        function closePopup() {
-            popup.style.display = 'none';
-            // Update last closed time
-            const updateData = JSON.parse(localStorage.getItem(storageKey)) || {};
-            updateData.lastClosed = new Date().toISOString();
-            localStorage.setItem(storageKey, JSON.stringify(updateData));
-        }
-        
-        // WhatsApp form submission
-        window.sendAdmissionToWhatsApp = function(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const contact = document.getElementById("contact").value;
-            const childName = document.getElementById("childName").value;
-            const age = document.getElementById("age").value;
-            const className = document.getElementById("class").value;
-    
-            const message = `*New Admission Inquiry (2025-2026)*\n
-    👤 *Parent Name:* ${name}
-    📧 *Email:* ${email}
-    📞 *Contact:* ${contact}
-    👶 *Child's Name:* ${childName}
-    🎂 *Age:* ${age}
-    🏫 *Class to Join:* ${className}`;
-    
-            const whatsappNumber = "919895361126";
-            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            
-            window.open(url, '_blank');
-            alert("Thank you! Redirecting to WhatsApp.");
-            
-            // Close popup after submission
-            closePopup();
-        };
-    });
-    </script>
-
-
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
