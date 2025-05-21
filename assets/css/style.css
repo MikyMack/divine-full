@@ -14,8 +14,8 @@
   --error-color: #dc3545;
   --border-color: #e0e0e0;
   --vs-border-color: #bbbbbb;
-  --title-font: "Fredoka", sans-serif;
-  --body-font: "Jost", sans-serif;
+  --title-font: "Inter", sans-serif;
+  --body-font: "Inter", sans-serif;
   --icon-font: "Font Awesome 5 Pro";
   --main-container: 1290px;
   --container-gutters: 30px;
@@ -35,6 +35,7 @@
   --button-gradient: linear-gradient(135deg, #2980b9, #9b59b6);
   --button-hover: linear-gradient(135deg, #3498db, #8e44ad);
   --form-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  --background-blue:linear-gradient(to right, #1F67E8, #6DADF4, #30A5F3);
 }
 
 /*------------------- 1.5. Typography -------------------*/
@@ -1177,7 +1178,7 @@ textarea.is-invalid {
   bottom: var(--border-size, 3px);
   left: var(--border-size, 3px);
   width: calc(50% - var(--border-size, 3px));
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue);
   z-index: -1;
   transform: scaleY(0.4);
   transform-origin: 100% 0;
@@ -1212,12 +1213,12 @@ textarea.is-invalid {
 }
 
 .vs-btn.style4 {
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue)!important;
 }
 
 .vs-btn.style4::before,
 .vs-btn.style4::after {
-  background-color: var(--theme-color);
+  background-color: var(--theme-color)!important;
 }
 
 .vs-btn:hover {
@@ -3706,7 +3707,9 @@ a.text-theme:hover,
   background-color: var(--vs-secondary-color);
   padding: 11px 0;
 }
-
+.header-layout2{
+  background: var(--background-blue);
+}
 @media (min-width: 1399px) {
   .header-layout2 {
     position: absolute;
@@ -4156,7 +4159,7 @@ a.text-theme:hover,
 .copyright-wrap {
   text-align: center;
   padding: px 0;
-  background-color: var(--theme-color2);
+  background: var(--background-blue);
   
 }
 
@@ -4201,7 +4204,7 @@ a.text-theme:hover,
 
 .footer-layout3,
 .footer-layout1 {
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue)!important;
   --title-color: #FFFFFF;
   --body-color: #FFFFFF;
 }
@@ -4737,7 +4740,7 @@ a.text-theme:hover,
   margin: 0;
   padding: 15px 30px 15px 30px;
   list-style-type: none;
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue);
   border-radius: 10px;
 }
 
@@ -6863,6 +6866,9 @@ blockquote.vs-quote p {
   /* Medium devices */
 }
 
+.vs-hero-wrapper {
+  
+}
 @media (max-width: 991px) {
   .vs-hero-wrapper4 {
     margin-top: -30px;
@@ -11193,22 +11199,22 @@ body.layout4 {
 
 .testi-style2 {
   position: relative;
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue);
   margin-bottom: 47px;
   padding: 38px 50px 45px 50px;
   border-radius: 30px;
 }
 
-.testi-style2:before {
+/* .testi-style2:before {
   content: "";
   position: absolute;
   left: 50px;
   bottom: -18px;
   width: 35px;
   height: 50px;
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue);
   clip-path: polygon(100% 50%, 0 0, 0 100%);
-}
+} */
 
 .testi-style2 .testi-text {
   color: var(--white-color);
@@ -16059,7 +16065,8 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .service-style7.color2 .service-body::before {
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue);
+  height: 230px!important;
 }
 
 .service-style7.color2 .service-link>i {
@@ -17180,7 +17187,11 @@ span.select2-selection.select2-selection--single:focus {
     flex-direction: column;
   }
 }
-
+.hero-title{
+   font-family: "Inter", sans-serif!important;
+   
+   
+}
 @media (max-width: 767px) {
   .form-style3.layout3 .form-img {
     display: none;
@@ -17505,18 +17516,18 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .email-btn {
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue);
   z-index: 1000 !important;
 
 }
 
 .whatsapp-btn {
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue);
   z-index: 1000 !important;
 }
 
 .phone-btn {
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue);
 }
 
 .enquiry-btn {
@@ -17525,7 +17536,7 @@ span.select2-selection.select2-selection--single:focus {
   top: 50%;
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: right bottom;
-  background-color: var(--vs-secondary-color);
+  background: var(--background-blue);
   color: white;
   padding: 5px 10px;
   border: none;
@@ -17542,7 +17553,7 @@ span.select2-selection.select2-selection--single:focus {
   top: 20%;
   transform: translateY(-50%) rotate(-90deg);
   transform-origin: right bottom;
-  background-color: var(--vs-secondary-color);
+   background: var(--background-blue);
   color: white;
   padding: 5px 10px;
   border: none;
@@ -19873,4 +19884,10 @@ textarea.pm-form-control {
         font-size: 12px!important;
     
       }
+    }
+    .ls-inner,.backgrnd-bg{
+  /* background: linear-gradient(to bottom right, #166FA0, #E73A8F, #E84454)!important; */
+  background: linear-gradient(to right, #1F67E8, #6DADF4, #30A5F3);
+
+
     }
