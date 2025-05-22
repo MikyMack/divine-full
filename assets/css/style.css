@@ -3296,7 +3296,7 @@ a.text-theme:hover,
 }
 
 .footer-info a {
-  color: inherit;
+  color: var(--white)!important;
 }
 
 .footer-info a:hover {
