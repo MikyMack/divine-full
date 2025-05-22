@@ -4159,7 +4159,7 @@ a.text-theme:hover,
 .copyright-wrap {
   text-align: center;
   padding: px 0;
-  background: var(--background-blue);
+  background: var(--vs-secondary-color);
   
 }
 
@@ -4204,7 +4204,7 @@ a.text-theme:hover,
 
 .footer-layout3,
 .footer-layout1 {
-  background: var(--background-blue)!important;
+  background: var(--vs-secondary-color)!important;
   --title-color: #FFFFFF;
   --body-color: #FFFFFF;
 }
@@ -19903,6 +19903,7 @@ textarea.pm-form-control {
 
 
     }
+  
     .abt-sec-title{
      font-weight: 700;
     font-size: 3rem; /* Adjust size as needed */
